@@ -368,6 +368,20 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 </section>
 
 <!-- LIVE BROADCAST -->
+<section class="invite block">
+  <div class="wrap">
+    <div class="invite-card frame">
+      <img decoding="async" src="assets/johan-invite.jpg" alt="Johan, founder of Pulse, holding up his hand wearing the gold ring in an Icelandic valley at dusk" width="1280" height="720">
+      <!-- TODO (dev owner TBD): mock-up placeholder — swap this card for the real video embed when Johan's invitation is cut -->
+      <button class="play" type="button" aria-label="Play the invitation from Johan. Video coming soon."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+      <div class="invite-text">
+        <b>Join us for the Singularity</b>
+        <span>An invitation from Johan, founder and inventor of the Pulse ring</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- THE MOMENT -->
 <section class="moment">
   <div class="wrap moment-inner">
@@ -414,21 +428,6 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     </div>
   </div>
 </section>
-
-<section class="invite block">
-  <div class="wrap">
-    <div class="invite-card frame">
-      <img decoding="async" src="assets/johan-invite.jpg" alt="Johan, founder of Pulse, holding up his hand wearing the gold ring in an Icelandic valley at dusk" width="1280" height="720">
-      <!-- TODO (dev owner TBD): mock-up placeholder — swap this card for the real video embed when Johan's invitation is cut -->
-      <button class="play" type="button" aria-label="Play the invitation from Johan. Video coming soon."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
-      <div class="invite-text">
-        <b>Join us for the Singularity</b>
-        <span>An invitation from Johan, founder and inventor of the Pulse ring</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section class="broadcast block">
   <div class="wrap">
@@ -506,7 +505,6 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     <div class="frame"><img decoding="async" src="assets/closing-circle.jpg" alt="A circle of people seated on an Icelandic lava meadow at dusk around a water altar, hands raised showing their rings, with hand-painted gold ripples spreading through the circle" width="1800" height="1004" loading="lazy" ></div>
   </div>
 </section>
-
 
 <section class="journey" id="journey">
   <div class="journey-sticky">
@@ -635,7 +633,6 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     </div>
   </div>
 </section>
-
 
 <section class="offer block" id="offer">
   <div class="wrap">
@@ -889,7 +886,6 @@ document.querySelectorAll('video[autoplay]').forEach(function(v){
     else v.pause();
   },{rootMargin:'220px'}).observe(v);
 });
-
 
 /* Film strip — play once on view, flip the caption when it turns */
 const strip=document.querySelector('.filmstrip');
