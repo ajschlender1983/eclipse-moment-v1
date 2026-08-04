@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience Totality Together · Pulse & Unify</title>
+<meta name="description" content="Every pulse awakens your power. Live transmission August 12. The closing circle August 14. Set one intention and let every pulse return you to it.">
+<meta property="og:title" content="Experience Totality Together · Pulse & Unify">
+<meta property="og:description" content="Watch the eclipse ceremony live from Iceland. Set one intention. Let every gentle pulse of your ring return you to it. $100 off with the eclipse offer.">
+<!-- TODO (dev owner TBD): og:image must become an ABSOLUTE https URL at deploy or Facebook/iMessage previews will not show the image -->
+<meta property="og:image" content="assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23fbcd66'/%3E%3Ccircle cx='16' cy='16' r='10.5' fill='%2317171d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --volcanic:#17171d;
+  --midnight:#0d1030;
+  --glacier:#f0f6f9;
+  --nebula:#492991;
+  --deepblue:#1330a5;
+  --aurora:#f42789;
+  --solar:#fbcd66;
+  --corona:#ff8a3d;
+  --teal:#00b99b;
+  --dim:rgba(240,246,249,.66);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--volcanic);color:var(--glacier);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;height:auto;display:block}
+
+/* ---------- buttons ---------- */
+.cta{display:inline-block;background:linear-gradient(135deg,var(--solar),var(--corona));color:#221302;font-weight:700;font-size:1.05rem;letter-spacing:.01em;padding:1rem 2.6rem;border-radius:999px;text-decoration:none;box-shadow:0 0 32px rgba(251,205,102,.35);transition:transform .2s ease,box-shadow .2s ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 0 48px rgba(251,205,102,.55)}
+.cta:active{transform:translateY(0)}
+.cta,.eclipse-mark{animation:breathe 8s ease-in-out infinite}
+@keyframes breathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--solar);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;color:var(--teal);border:1px solid rgba(0,185,155,.4);background:rgba(0,185,155,.08);border-radius:999px;padding:.4rem 1rem}
+.cta-timer{display:inline-block;margin-left:.55rem;padding:.18rem .7rem;border-radius:999px;background:rgba(23,23,29,.22);font-size:.88rem;font-variant-numeric:tabular-nums;vertical-align:1px}
+.cta-timer:empty{display:none}
+.chip svg{flex:none}
+.icn{width:22px;height:22px;color:var(--solar);display:block;margin-bottom:.6rem}
+.beat .icn{margin:0 auto .55rem}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.hero video,.hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,23,29,.3) 0%,rgba(23,23,29,.12) 40%,rgba(23,23,29,.84) 88%,var(--volcanic) 100%);z-index:-1}
+.hero-inner{width:min(1080px,92%);margin:auto;text-align:center;padding:2rem 0}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--glacier);opacity:.85;margin-bottom:1.1rem}
+.lockup{display:flex;align-items:center;justify-content:center;gap:clamp(.8rem,2.4vw,1.3rem);margin-bottom:1.6rem}
+.lk-brand{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:clamp(1.05rem,2.4vw,1.45rem);letter-spacing:.32em;text-indent:.32em;color:var(--glacier);text-shadow:0 1px 24px rgba(13,16,48,.7)}
+.lk-brand svg{width:clamp(22px,2.6vw,28px);height:auto;flex:none;filter:drop-shadow(0 0 7px rgba(251,205,102,.55))}
+.lk-x{color:var(--solar);font-size:clamp(1rem,2.2vw,1.35rem);font-weight:400;opacity:.9}
+.hero h1{font-size:clamp(2.5rem,6.5vw,4.6rem);font-weight:700;letter-spacing:-.02em;line-height:1.05;text-shadow:0 2px 40px rgba(13,16,48,.6)}
+.hero .sub{font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--glacier);opacity:.92;margin:1.3rem auto 2.2rem;max-width:34ch;font-weight:400}
+.hero .cta-row{display:flex;flex-direction:column;align-items:center;gap:.75rem;margin-bottom:2.6rem}
+
+/* countdown strip */
+.strip{border-top:1px solid rgba(240,246,249,.16);background:rgba(13,16,48,.72)}
+.strip-inner{width:min(1080px,92%);margin:0 auto;display:flex;justify-content:center;align-items:baseline;gap:1rem;padding:1.05rem 0;flex-wrap:wrap;text-align:center}
+.strip .n{font-size:1.3rem;font-weight:700;color:var(--solar);font-variant-numeric:tabular-nums}
+.strip .l{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.wrap{width:min(1080px,92%);margin:0 auto}
+.block{padding:clamp(4.5rem,10vw,7.5rem) 0}
+h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;line-height:1.12}
+.lead{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--dim);max-width:46ch}
+
+/* founder invitation */
+.invite.block{padding-top:clamp(2.2rem,4.5vw,3.8rem)}
+.invite-card{max-width:920px;margin:0 auto;position:relative}
+.invite-card img{width:100%}
+.play{position:absolute;left:63%;top:42%;transform:translate(-50%,-50%);width:clamp(62px,8.5vw,84px);aspect-ratio:1;border-radius:50%;border:none;background:linear-gradient(135deg,var(--solar),var(--corona));color:#221302;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 42px rgba(251,205,102,.55);animation:breathe 8s ease-in-out infinite;transition:transform .2s ease}
+.play:hover{transform:translate(-50%,-50%) scale(1.07)}
+.play svg{width:44%;margin-left:7%}
+.invite-text{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.7rem;background:linear-gradient(180deg,transparent,rgba(13,16,48,.9));text-align:left}
+.invite-text b{display:block;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:700}
+.invite-text span{font-size:.92rem;color:var(--dim)}
+
+/* broadcast */
+.broadcast{background:linear-gradient(180deg,var(--volcanic),var(--midnight));position:relative;overflow:hidden}
+.trod-cap{font-size:.85rem;color:var(--dim);text-align:center;margin-top:.95rem;letter-spacing:.02em}
+.trod .ripple{transform-box:fill-box;transform-origin:center;animation:trodRipple 8s cubic-bezier(.25,.6,.4,1) infinite}
+@keyframes trodRipple{0%{transform:scale(1);opacity:.75}60%,100%{transform:scale(19.1);opacity:0}}
+.broadcast .wrap{max-width:680px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--aurora);font-weight:700;margin-bottom:1rem}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--aurora);box-shadow:0 0 0 0 rgba(244,39,137,.6);animation:live 1.8s infinite}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(244,39,137,.55)}70%{box-shadow:0 0 0 11px rgba(244,39,137,0)}100%{box-shadow:0 0 0 0 rgba(244,39,137,0)}}
+.broadcast p{margin-top:1.1rem}
+.watch-link{display:inline-block;margin-top:1.6rem;color:var(--glacier);opacity:.75;font-size:.95rem;text-decoration:underline;text-underline-offset:4px;transition:opacity .2s}
+.watch-link:hover{opacity:1}
+
+/* closing circle */
+.closing{background:var(--midnight)}
+.ritual{display:flex;align-items:flex-start;gap:1rem;margin:1.9rem 0 1.2rem;flex-wrap:wrap}
+.ritual-step{flex:1 1 12rem;min-width:11rem;border:1px solid rgba(255,138,61,.42);box-shadow:0 0 18px rgba(255,138,61,.12);border-radius:16px;padding:1.1rem 1.1rem 1.2rem;background:rgba(13,16,48,.42)}
+.ritual-icn{width:38px;height:38px;color:var(--solar);display:block;margin-bottom:.75rem}
+.ritual-step b{display:block;font-size:1rem;margin-bottom:.4rem}
+.ritual-step span{display:block;font-size:.86rem;line-height:1.42;color:rgba(240,246,249,.7)}
+.ritual-arrow{flex:0 0 auto;align-self:center;width:40px;color:var(--solar);opacity:.55}
+@media (max-width:560px){.ritual-arrow{transform:rotate(90deg);align-self:center;margin:.1rem auto}}
+.ritual-close{font-size:.95rem;color:rgba(240,246,249,.78);margin-bottom:1.6rem}
+.closing-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.closing p{margin-top:1.1rem}
+
+/* final section video */
+.final{position:relative;overflow:hidden;isolation:isolate}
+.final-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.final::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--volcanic) 0%,rgba(23,23,29,.55) 30%,rgba(23,23,29,.55) 70%,rgba(23,23,29,.9) 100%);z-index:-1}
+.frame{border-radius:18px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(240,246,249,.12);position:relative}
+
+/* break autopilot — text band under the invite */
+.autopilot{position:relative;min-height:min(100vh,860px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:clamp(3rem,9vh,6rem);overflow:hidden;isolation:isolate;text-align:center}
+.auto-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2;transform:scale(1.14);will-change:transform}
+.auto-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--volcanic) 0,rgba(23,23,29,.35) 18%,rgba(11,10,22,.32) 46%,rgba(11,10,22,.86) 72%,var(--volcanic) 97%)}
+.auto-inner{position:relative;z-index:1}
+.auto-lock{display:flex;flex-direction:column;align-items:center;gap:.35rem}
+.lock-a{font-size:clamp(.95rem,2.4vw,1.35rem);font-weight:300;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:rgba(240,246,249,.9);text-shadow:0 2px 22px rgba(0,0,0,.9)}
+.lock-b{font-size:clamp(2.1rem,6.4vw,4.4rem);font-weight:700;letter-spacing:-.03em;line-height:1.02;background:linear-gradient(100deg,#fff7e0,var(--solar) 42%,var(--corona));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 30px rgba(0,0,0,.8))}
+.autopilot .lead{margin:1.6rem auto 0;text-shadow:0 1px 20px rgba(0,0,0,.9)}
+
+/* the ring — every pulse, on the living eclipse */
+.ring{background:linear-gradient(180deg,rgba(11,10,22,0) 78%,#0b0a16 100%), radial-gradient(90% 70% at 15% 10%, rgba(73,41,145,.28), transparent 65%), radial-gradient(70% 60% at 85% 80%, rgba(244,39,137,.12), transparent 70%), var(--midnight);text-align:center}
+.cycle-stage{position:relative;width:min(92vw,520px);margin:0 auto;aspect-ratio:9/16}
+.cycle-vid-bg{position:absolute;inset:0;overflow:hidden;border-radius:18px}
+.cycle-stage h2{position:absolute;left:50%;top:35%;transform:translate(-50%,-50%);width:94%;z-index:3;font-size:clamp(1.5rem,3.4vw,2.2rem);text-shadow:0 2px 30px rgba(0,0,0,.92)}
+.cycle-cards{position:absolute;inset:0;z-index:3}
+.beat-card{position:absolute;transform:translate(-50%,-50%);width:min(38%,10.5rem);text-align:center}
+.bc-left{left:21%;top:50%}
+.bc-right{left:79%;top:50%}
+.bc-bottom{left:50%;top:80%;width:min(62%,15rem)}
+
+.beat{font-size:clamp(.82rem,1.5vw,.96rem);text-shadow:0 1px 16px rgba(0,0,0,.95);line-height:1.4;font-weight:500;animation:beatGlow 8s ease-in-out infinite}
+.cb2{animation-delay:2.667s}
+.cb3{animation-delay:5.333s}
+@keyframes beatGlow{0%,2%{filter:brightness(1.5)}10%,100%{filter:brightness(1)}}
+.beat span{display:block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--solar);margin-bottom:.35rem;font-weight:700}
+.cycle-video{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;will-change:transform}
+@media (max-width:700px){
+  .ring{padding-top:0;padding-bottom:0}
+  .ring .wrap{width:100%;max-width:none}
+  .cycle-stage{width:100%}
+  .cycle-vid-bg{border-radius:0}
+}
+
+/* integration */
+.integration{background:linear-gradient(180deg,var(--midnight),var(--volcanic))}
+.integration .wrap{max-width:680px}
+.kicker{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:1rem}
+.integration p{margin-top:1.1rem}
+.integration .cta{margin-top:2rem}
+.integration .watch-link{margin-left:1.4rem}
+
+/* journey — Iceland → the water altar → the hand → the world */
+.journey{height:640vh;position:relative;background:#0b0a16}
+.journey-sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:radial-gradient(70% 55% at 25% 22%, rgba(73,41,145,.30), transparent 68%), radial-gradient(60% 50% at 78% 72%, rgba(244,39,137,.16), transparent 70%), #0b0a16}
+/* the moment — planetary alignment, for whoever is watching */
+.moment{position:relative;background:var(--volcanic);padding:clamp(4.5rem,10vw,8rem) 0}
+.moment-inner{max-width:760px;text-align:center}
+.moment-inner .lead{margin:1.2rem auto 0;max-width:52ch;color:rgba(240,246,249,.82)}
+.moment-inner h2{margin-top:.7rem}
+.moment-tag{font-size:clamp(1.35rem,2.8vw,1.9rem);font-weight:700;color:var(--solar);margin-top:1.8rem;letter-spacing:-.01em}
+.moment-close{color:var(--glacier)!important;font-weight:500}
+.lookup{margin:2.8rem 0 2.2rem}
+.lookup-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.lookup-turn{grid-template-columns:1fr 1.62fr;margin-top:.7rem}
+.lu{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(240,246,249,.1);opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease,filter .8s ease}
+.lu img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
+.lu-cool{filter:saturate(.55) brightness(.82)}
+.lookup.seen .lu{opacity:1;transform:none}
+.lookup.seen .lu:nth-child(2){transition-delay:.1s}
+.lookup.seen .lu:nth-child(3){transition-delay:.2s}
+.lookup.seen .lookup-turn .lu{transition-delay:.42s}
+.lookup.seen .lookup-turn .lu:nth-child(2){transition-delay:.55s}
+.lookup-cap{font-size:.95rem;color:var(--dim);text-align:center;margin:.95rem 0 .2rem;letter-spacing:.01em}
+.lookup-cap-warm{color:var(--solar);font-weight:500;margin-top:1.05rem}
+@media (max-width:640px){.lookup-row{grid-template-columns:1fr 1fr}.lookup-row .lu:nth-child(3){display:none}.lookup-turn{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.lu{opacity:1;transform:none}}
+.moment-stats{display:flex;justify-content:center;gap:clamp(1.4rem,6vw,4rem);flex-wrap:wrap;margin-top:2.6rem;padding-top:1.9rem;border-top:1px solid rgba(240,246,249,.14)}
+.moment-stats b{display:block;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--solar);font-weight:700;line-height:1.1}
+.moment-stats span{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.j-aerial{position:absolute;inset:0;width:100%;height:100%;will-change:transform,opacity}
+.j-trod2{position:absolute;left:50%;top:50%;width:120vmin;aspect-ratio:1;transform:translate(-50%,-50%);opacity:0;will-change:transform,opacity}
+.j-trod2 svg{width:100%;height:100%;display:block}
+#worldmap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(94vw,1080px);aspect-ratio:2/1;opacity:0;will-change:opacity}
+.j-zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform,opacity}
+.j-rings{width:150vmin;height:150vmin;flex:none;opacity:0;will-change:opacity}
+.j-photo{position:absolute;left:50%;top:50%;width:46vmin;height:46vmin;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden}
+.j-photo img{width:100%;height:100%;object-fit:cover}
+.j-glow{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,247,224,.9),rgba(251,205,102,.55) 55%,rgba(251,205,102,.25) 100%);opacity:0;will-change:opacity}
+.j-lines{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92%,760px);text-align:center;pointer-events:none;z-index:4}
+.j-lines span{display:block;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);opacity:0;font-size:clamp(2.1rem,6vw,4.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.05;text-shadow:0 3px 44px rgba(0,0,0,.92);will-change:opacity,transform}
+.j-lines span[data-l="2"]{color:var(--solar);top:calc(50% + min(23.5vw,270px) + 2.8rem)}
+
+/* testimonials */
+.testis{position:relative;z-index:6;margin-top:-42vh;background:radial-gradient(75% 60% at 30% 34%, rgba(73,41,145,.30), transparent 65%), radial-gradient(55% 45% at 82% 62%, rgba(244,39,137,.13), transparent 70%), linear-gradient(180deg, rgba(11,10,22,0) 0, rgba(11,10,22,.72) 14vh, #0b0a16 30vh, var(--volcanic) 100%)}
+.testi-head{text-align:center;max-width:34ch;margin:0 auto}
+.tcar-wrap{position:relative;margin-top:2.6rem}
+.tcar{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.2rem .2rem 1rem;scrollbar-width:none}
+.tcar::-webkit-scrollbar{display:none}
+.tcard{flex:0 0 min(78vw,340px);aspect-ratio:3/4;scroll-snap-align:center;border-radius:18px;overflow:hidden;background-size:cover;background-position:top center;border:1px solid rgba(255,138,61,.55);box-shadow:0 0 22px rgba(255,138,61,.22), 0 0 60px rgba(251,205,102,.10), inset 0 0 0 1px rgba(251,205,102,.12);display:flex;align-items:flex-end;position:relative}
+.tcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,16,48,0) 30%,rgba(11,13,32,.62) 55%,rgba(9,10,24,.96) 100%)}
+.tcard-copy{position:relative;z-index:2;padding:1.15rem 1.15rem 1.2rem}
+.tcard blockquote{font-size:1.02rem;font-weight:700;line-height:1.32;text-shadow:0 1px 14px rgba(0,0,0,.8)}
+.tcard p{margin-top:.55rem;font-size:.8rem;line-height:1.42;color:rgba(240,246,249,.78)}
+.tcard figcaption{margin-top:.8rem;padding-top:.7rem;border-top:1px solid rgba(240,246,249,.18)}
+.tcard figcaption b{display:block;font-size:.92rem;color:var(--solar)}
+.tcard figcaption span{display:block;margin-top:.1rem;font-size:.72rem;letter-spacing:.04em;color:var(--dim)}
+.tcar-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(251,205,102,.5);background:rgba(23,23,29,.88);color:var(--solar);font-size:1.1rem;cursor:pointer;transition:background .2s}
+.tcar-btn:hover{background:rgba(251,205,102,.18)}
+.tcar-btn.prev{left:-10px}
+.tcar-btn.next{right:-10px}
+@media (max-width:700px){.tcar-btn{display:none}}
+
+/* montage — everyone feeling the pulse together */
+.collage-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.collage{width:100%;display:block;transform:scale(1.1);transform-origin:center 60%;will-change:transform}
+.collage-pulse{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 48%,rgba(251,205,102,.2),transparent 72%);animation:collagePulse 8s ease-in-out infinite}
+@keyframes collagePulse{0%,84%,100%{opacity:.06}90%{opacity:1}96%{opacity:.2}}
+.outro{text-align:center;margin-top:2.4rem;font-size:clamp(1.02rem,2vw,1.2rem);color:var(--dim)}
+@media (max-width:760px){
+}
+
+/* offer */
+.offer{background:var(--volcanic)}
+.offer h2{text-align:center}
+.offer .chip-row{display:flex;justify-content:center;margin-top:1.4rem}
+.paths-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,3vw,2rem);margin-top:2.4rem;max-width:960px;margin-left:auto;margin-right:auto}
+.path{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:26rem;border-radius:20px;overflow:hidden;border:1px solid rgba(255,138,61,.42);box-shadow:0 0 24px rgba(255,138,61,.14);background-size:cover;background-position:center}
+.path.gate{background-image:linear-gradient(190deg,rgba(13,16,48,0) 18%,rgba(13,16,48,.62) 48%,rgba(9,11,32,.96) 72%),url('assets/card-festival.jpg')}
+.path[data-path="home"]{background-image:linear-gradient(190deg,rgba(13,16,48,0) 18%,rgba(13,16,48,.62) 48%,rgba(9,11,32,.96) 72%),url('assets/card-home.jpg')}
+.path-body{padding:1.6rem 1.6rem 1.7rem}
+.path-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(0,185,155,.45);background:rgba(0,185,155,.1);border-radius:999px;padding:.3rem .8rem;margin-bottom:.9rem}
+.path-badge.scarce{color:var(--solar);border-color:rgba(251,205,102,.5);background:rgba(251,205,102,.1)}
+.path h3{font-size:clamp(1.35rem,2.6vw,1.7rem);margin-bottom:.9rem;text-shadow:0 1px 14px rgba(13,16,48,.85)}
+.path-list{list-style:none;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.5rem}
+.path-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.95rem;line-height:1.35;color:rgba(240,246,249,.92)}
+.tick{width:16px;height:16px;flex:none;margin-top:.18rem;color:var(--teal)}
+.path-cta{display:block;text-align:center;width:100%;padding:.85rem 1rem;font-size:1rem}
+.path .note{font-size:.8rem;color:rgba(240,246,249,.6);margin-top:.75rem;text-align:center}
+.offer .cta-row{display:flex;flex-direction:column;align-items:center;gap:.8rem;margin-top:2.6rem}
+.batch{font-size:.92rem;color:var(--dim);text-align:center}
+
+/* live options (in the broadcast section) */
+.live-options{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.8rem;max-width:520px}
+.live-opt{display:block;border:1px solid rgba(240,246,249,.16);border-radius:16px;padding:1.1rem 1.2rem;text-decoration:none;color:var(--glacier);background:rgba(240,246,249,.03);transition:border-color .2s,background .2s}
+.live-opt:hover{border-color:var(--solar);background:rgba(251,205,102,.06)}
+.live-opt b{display:block;font-size:1rem;margin-bottom:.25rem}
+.live-opt span{font-size:.85rem;color:var(--dim)}
+
+/* community band: RSVP + referral */
+.community{background:linear-gradient(180deg,var(--volcanic),var(--midnight))}
+.community .cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,3vw,2rem)}
+.ccard{border:1px solid rgba(240,246,249,.14);border-radius:20px;padding:2.2rem 2rem;background:rgba(240,246,249,.03)}
+.ccard.gift{background:linear-gradient(100deg,rgba(13,16,48,.9) 34%,rgba(13,16,48,.5)),url('assets/duo-float.jpg') center 45%/cover no-repeat;border-color:rgba(251,205,102,.28)}
+.ccard.gift p{color:rgba(240,246,249,.82)}
+.ccard h2{font-size:clamp(1.4rem,2.8vw,1.9rem)}
+.ccard p{margin-top:.8rem;color:var(--dim);font-size:1rem}
+.ccard form{margin-top:1.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.ccard input{flex:1;background:rgba(240,246,249,.06);border:1px solid rgba(240,246,249,.22);border-radius:999px;padding:.85rem 1.4rem;color:var(--glacier);font-family:inherit;font-size:.95rem;min-width:200px;outline:none}
+.ccard input:focus{border-color:var(--teal)}
+.btn-outline{background:transparent;border:1px solid rgba(240,246,249,.35);color:var(--glacier);border-radius:999px;padding:.85rem 1.6rem;font-family:inherit;font-size:.95rem;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.ccard .thanks{margin-top:1.2rem;color:var(--teal);display:none}
+.ccard .thanks a{color:var(--solar)}
+.ccard .value{margin-top:1.6rem}
+.ccard .value .btn-outline{border-color:var(--solar);color:var(--solar)}
+.ccard .value .btn-outline:hover{background:rgba(251,205,102,.1)}
+.ccard .fine-note{margin-top:1rem;font-size:.8rem;color:rgba(240,246,249,.55)}
+
+/* final */
+.final{background:radial-gradient(ellipse 70% 55% at 50% 42%,rgba(255,138,61,.28),transparent 65%),var(--midnight);text-align:center}
+.eclipse-mark{width:110px;height:110px;border-radius:50%;margin:0 auto 2rem;background:var(--midnight);box-shadow:0 0 40px 14px rgba(255,138,61,.55),0 0 90px 40px rgba(251,205,102,.25)}
+.final h2{max-width:20ch;margin:0 auto 1.6rem}
+.final .fine{margin-top:2.6rem;font-size:.8rem;color:rgba(240,246,249,.45)}
+
+footer{background:var(--midnight);border-top:1px solid rgba(240,246,249,.12);padding:1.8rem 0;text-align:center;font-size:.8rem;color:rgba(240,246,249,.5)}
+footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;margin-top:.4rem}
+
+/* sticky mobile bar */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(13,16,48,.97);border-top:1px solid rgba(240,246,249,.15);padding:.7rem 1rem;display:none;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(110%);transition:transform .3s ease}
+.sticky-bar.show{transform:translateY(0)}
+.sticky-bar .off{font-size:.85rem;color:var(--dim)}
+.sticky-bar .off b{color:var(--solar)}
+.sticky-bar .cta{padding:.7rem 1.5rem;font-size:.95rem;box-shadow:none}
+
+@media (max-width:760px){
+  .broadcast .wrap,.integration .wrap,.paths-grid,.community .cards,.live-options,.closing-grid{grid-template-columns:1fr}
+  .integration .frame{order:-1}
+  .hero-inner{padding-bottom:1rem}
+  .sticky-bar{display:flex}
+  body.bar-visible{padding-bottom:64px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <img decoding="async" class="hero-bg" src="assets/hero-ring.jpg" alt="" fetchpriority="high">
+  <div class="hero-inner">
+    <div class="lockup" role="img" aria-label="Pulse and Unify">
+      <span class="lk-brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#fbcd66" stroke-width="1.2" opacity=".4"/><circle cx="13" cy="13" r="7" fill="none" stroke="#fbcd66" stroke-width="2.6"/></svg>PULSE</span>
+      <span class="lk-x">×</span>
+      <span class="lk-brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9.5" fill="#0d1030" stroke="#fbcd66" stroke-width="1.6"/><path d="M5.5 9.5a9.5 9.5 0 0 1 15 0" fill="none" stroke="#fff7e0" stroke-width="1.6" stroke-linecap="round" opacity=".9"/></svg>UNIFY</span>
+    </div>
+    <h1>Experience Totality Together.</h1>
+    <p class="sub">Every pulse awakens your power.</p>
+    <div class="cta-row">
+      <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 off</span>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="strip-inner" aria-live="off">
+      <span class="n" id="cd">&nbsp;</span>
+      <span class="l" id="cd-label">To totality over Snæfellsjökull · Aug 12 · 17:47 UTC</span>
+    </div>
+  </div>
+</header>
+
+<!-- FOUNDER INVITATION (placeholder thumbnail — video pending) -->
+<section class="invite block">
+  <div class="wrap">
+    <div class="invite-card frame">
+      <img decoding="async" src="assets/johan-invite.jpg" alt="Johan, founder of Pulse, holding up his hand wearing the gold ring in an Icelandic valley at dusk" width="1280" height="720">
+      <!-- TODO (dev owner TBD): mock-up placeholder — swap this card for the real video embed when Johan's invitation is cut -->
+      <button class="play" type="button" aria-label="Play the invitation from Johan. Video coming soon."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+      <div class="invite-text">
+        <b>Join us for the Singularity</b>
+        <span>An invitation from Johan, founder and inventor of the Pulse ring</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BREAK AUTOPILOT -->
+<section class="autopilot">
+  <img decoding="async" class="auto-bg" src="assets/autopilot-hand.jpg" alt="A hand wearing the gold Pulse ring raised toward a total eclipse above an Icelandic glacier valley" width="1152" height="2048">
+  <div class="auto-veil" aria-hidden="true"></div>
+  <div class="wrap auto-inner">
+    <p class="auto-lock">
+      <span class="lock-a">Break autopilot</span>
+      <span class="lock-b">Be present together.</span>
+    </p>
+    <p class="lead">Thousands of hands united by one pulse.</p>
+  </div>
+</section>
+
+<!-- LIVE BROADCAST -->
+<!-- THE MOMENT -->
+<section class="moment">
+  <div class="wrap moment-inner">
+    <span class="kicker">August 12 · 17:47 UTC · two minutes</span>
+    <h2>The moment the planet looks up.</h2>
+    <p class="lead">The moon covers the sun over the North Atlantic. Day turns to dusk, the birds go quiet, and everyone standing in that shadow feels the same thing at the same second.</p>
+    <p class="lead">In Iceland, fifteen hundred people sit in fifteen rings around a water altar, facing inward while the earth, the moon and the sun come into a line. Forty-five minutes of ceremonial music builds, then stops.</p>
+    <p class="lead moment-close">Alignments like this are inflection points. A species remembers it is one, and something in you turns toward your own life.</p>
+    <div class="lookup" aria-label="Illustrated sequence: heads-down days, then a crowd looking up together">
+      <div class="lookup-row">
+        <figure class="lu lu-cool"><img decoding="async" src="assets/world/w1.jpg" alt="A commuter train at dusk, every face lit by its own phone" width="1100" height="619" loading="lazy" ></figure>
+        <figure class="lu lu-cool"><img decoding="async" src="assets/world/w2.jpg" alt="An evening living room lit only by phone glow" width="1100" height="619" loading="lazy" ></figure>
+        <figure class="lu lu-cool"><img decoding="async" src="assets/world/w3.jpg" alt="A woman at a desk dissolving at the edges into grey static" width="1100" height="619" loading="lazy" ></figure>
+      </div>
+      <p class="lookup-cap">Most days, we are somewhere else.</p>
+      <div class="lookup-row lookup-turn">
+        <figure class="lu"><img decoding="async" src="assets/world/w4.jpg" alt="A commuter looking up from her phone, warmth returning to her face" width="1100" height="619" loading="lazy" ></figure>
+        <figure class="lu lu-wide"><img decoding="async" src="assets/world/w5.jpg" alt="A quiet crowd watching a honey dawn together" width="1100" height="619" loading="lazy" ></figure>
+      </div>
+      <p class="lookup-cap lookup-cap-warm">On August 12, everyone looks up at once.</p>
+    </div>
+
+    <p class="moment-tag">Two minutes of silence, together.</p>
+    <div class="moment-stats">
+      <div><b>1,500</b><span>in the circle</span></div>
+      <div><b>15</b><span>rings, facing in</span></div>
+      <div><b>2 min</b><span>of shared silence</span></div>
+      <div><b>1</b><span>intention each</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="broadcast block">
+  <div class="wrap">
+    <div>
+      <span class="badge"><span class="dot"></span>Live transmission</span>
+      <h2>Totality, wherever you are.</h2>
+      <p class="lead">August 12. We transmit live from the Circle of Tröð: fifteen rings of people around one water altar, beneath Snæfellsjökull.</p>
+      <p class="lead">Unify co-founder Patrick Kronfli holds the circle, on land one Icelandic family has kept sacred for generations. Ceremonial music builds chapter by chapter as the moon closes.</p>
+      <p class="lead">At totality, two minutes of shared silence. Your intention goes into the water.</p>
+      <div class="live-options">
+        <a class="live-opt" href="#offer"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 13l-3.5 7M12 13l3.5 7"/></svg><b>In person</b><span>Your ring waits at the gate.</span></a>
+        <a class="live-opt" href="#rsvp"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="1.4" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9 9 0 0 1 13 0"/></svg><b>Tune in remotely</b><span>Your seat in the sixteenth ring.</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE RING -->
+
+<section class="ring block">
+  <div class="wrap">
+    <div class="cycle-stage">
+      <div class="cycle-vid-bg" aria-hidden="true">
+        <video class="cycle-video" src="assets/cycle-eclipse.mp4" poster="assets/cycle-poster.jpg" autoplay muted loop playsinline preload="none" aria-label="A total eclipse blazing over dark mountains while a gold ring sends ripples across water"></video>
+      </div>
+      <h2>Every pulse brings you back.</h2>
+      <div class="cycle-cards">
+        <div class="beat-card bc-left"><div class="beat cb1"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="9.5" opacity=".45"/></svg><span>Pulse</span>A gentle vibration finds you.</div></div>
+        <div class="beat-card bc-right"><div class="beat cb2"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M9.5 7.5v9M14.5 7.5v9"/></svg><span>Pause</span>One breath, right where you are.</div></div>
+        <div class="beat-card bc-bottom"><div class="beat cb3"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3.5L9 6.5l4 11 2.5-5.5H21"/></svg><span>Practice</span>Presence becomes rhythm.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="integration block" id="closing">
+  <div class="wrap closing-grid">
+    <div>
+      <span class="kicker">The closing circle · Friday, August 14 · 19:00 Iceland</span>
+      <h2>Every pulse, a reminder.</h2>
+      <p class="lead">Beneath the eclipse, you promise yourself something. Softer with your kids. Present at dinner. Here for your one life.</p>
+      <p class="lead">Most promises fade by Tuesday. Yours comes home on your finger.</p>
+      <p class="lead">The festival closes the circle with a Pulse ritual in the Garden. Rings up. One breath, together.</p>
+
+      <div class="ritual">
+        <div class="ritual-step">
+          <svg class="ritual-icn" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="3.4" fill="currentColor"/>
+            <circle cx="22" cy="22" r="9" stroke="currentColor" stroke-width="1.5" opacity=".65"/>
+            <circle cx="22" cy="22" r="15" stroke="currentColor" stroke-width="1.5" opacity=".38"/>
+            <circle cx="22" cy="22" r="20.5" stroke="currentColor" stroke-width="1.5" opacity=".18"/>
+          </svg>
+          <b>Share your Pulse moments</b>
+          <span>What you noticed when the ring found you. Said out loud, into the circle.</span>
+        </div>
+        <div class="ritual-arrow" aria-hidden="true">
+          <svg viewBox="0 0 40 12" fill="none"><path d="M0 6h34M29 1.5 34.5 6 29 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ritual-step">
+          <svg class="ritual-icn" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="20.5" stroke="currentColor" stroke-width="1.5" opacity=".22" stroke-dasharray="2 5"/>
+            <ellipse cx="22" cy="22" rx="8.4" ry="10.6" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M22 5.5v5M22 33.5v5M5.5 22h5M33.5 22h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+          </svg>
+          <b>Make your commitment</b>
+          <span>One promise to yourself, witnessed by everyone in the circle and everyone watching.</span>
+        </div>
+      </div>
+
+      <p class="ritual-close">Then the ring carries it. Every pulse after is the circle, checking in.</p>
+
+      <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+      <a class="watch-link" href="#rsvp">RSVP for the transmission</a>
+    </div>
+    <div class="frame"><img decoding="async" src="assets/closing-circle.jpg" alt="A circle of people seated on an Icelandic lava meadow at dusk around a water altar, hands raised showing their rings, with hand-painted gold ripples spreading through the circle" width="1800" height="1004" loading="lazy" ></div>
+  </div>
+</section>
+
+
+<section class="journey" id="journey">
+  <div class="journey-sticky">
+    <canvas id="worldmap" aria-label="A dotted world map: the pulse radiates from Iceland to five hundred wearers everywhere"></canvas>
+    <canvas class="j-aerial" id="icelandmap" aria-hidden="true"></canvas>
+    <div class="j-trod2" aria-hidden="true">
+      <svg viewBox="0 0 640 640">
+        <defs>
+          <radialGradient id="trodBg2" cx="50%" cy="48%" r="75%">
+            <stop offset="0%" stop-color="#181d4e"/><stop offset="55%" stop-color="#0d1030"/><stop offset="100%" stop-color="#17171d"/>
+          </radialGradient>
+          <radialGradient id="altarGlow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff7e0" stop-opacity=".95"/><stop offset="45%" stop-color="#fbcd66" stop-opacity=".55"/><stop offset="100%" stop-color="#fbcd66" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g stroke="#fbcd66" fill="none" stroke-width="2.4" stroke-linecap="round">
+          <circle cx="320" cy="320" r="44" stroke-dasharray="0 11" opacity=".5"/>
+          <circle cx="320" cy="320" r="58" stroke-dasharray="0 11" opacity=".47"/>
+          <circle cx="320" cy="320" r="71" stroke-dasharray="0 11" opacity=".44"/>
+          <circle cx="320" cy="320" r="85" stroke-dasharray="0 11" opacity=".41"/>
+          <circle cx="320" cy="320" r="99" stroke-dasharray="0 11" opacity=".38"/>
+          <circle cx="320" cy="320" r="112" stroke-dasharray="0 11" opacity=".35"/>
+          <circle cx="320" cy="320" r="126" stroke-dasharray="0 11" opacity=".32"/>
+          <circle cx="320" cy="320" r="140" stroke-dasharray="0 11" opacity=".3"/>
+          <circle cx="320" cy="320" r="153" stroke-dasharray="0 11" opacity=".27"/>
+          <circle cx="320" cy="320" r="167" stroke-dasharray="0 11" opacity=".25"/>
+          <circle cx="320" cy="320" r="181" stroke-dasharray="0 11" opacity=".23"/>
+          <circle cx="320" cy="320" r="194" stroke-dasharray="0 11" opacity=".21"/>
+          <circle cx="320" cy="320" r="208" stroke-dasharray="0 11" opacity=".19"/>
+          <circle cx="320" cy="320" r="222" stroke-dasharray="0 11" opacity=".17"/>
+          <circle cx="320" cy="320" r="236" stroke-dasharray="0 11" opacity=".15"/>
+        </g>
+        <g fill="#fbcd66" opacity=".55">
+          <polygon points="505.3,507.3 491.1,504.4 502.4,493.1"/>
+          <polygon points="134.7,507.3 137.5,493.1 148.9,504.4"/>
+          <polygon points="134.7,136.7 148.9,139.5 137.5,150.8"/>
+          <polygon points="505.3,136.7 502.5,150.8 491.1,139.5"/>
+        </g>
+        <circle cx="320" cy="320" r="26" fill="url(#altarGlow2)"/>
+        <circle cx="320" cy="320" r="11" fill="#fbcd66"/>
+        <circle cx="320" cy="320" r="4.5" fill="#fff7e0"/>
+      </svg>
+    </div>
+    <div class="j-zoom" aria-hidden="true">
+      <svg class="j-rings" viewBox="0 0 600 600" fill="none">
+        <g stroke="#fbcd66" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="300" cy="300" r="70" stroke-dasharray="0 10" opacity=".5"/>
+          <circle cx="300" cy="300" r="100" stroke-dasharray="0 10" opacity=".44"/>
+          <circle cx="300" cy="300" r="130" stroke-dasharray="0 10" opacity=".38"/>
+          <circle cx="300" cy="300" r="160" stroke-dasharray="0 10" opacity=".32"/>
+          <circle cx="300" cy="300" r="190" stroke-dasharray="0 10" opacity=".27"/>
+          <circle cx="300" cy="300" r="220" stroke-dasharray="0 10" opacity=".22"/>
+          <circle cx="300" cy="300" r="250" stroke-dasharray="0 10" opacity=".17"/>
+          <circle cx="300" cy="300" r="278" stroke-dasharray="0 10" opacity=".13"/>
+        </g>
+        <g fill="#fbcd66" opacity=".5">
+          <polygon points="507,507 494,504 504,494"/>
+          <polygon points="93,507 96,494 106,504"/>
+          <polygon points="93,93 106,96 96,106"/>
+          <polygon points="507,93 504,106 494,96"/>
+        </g>
+      </svg>
+      <div class="j-photo"><img decoding="async" src="assets/eclipse-hand.jpg" alt=""><div class="j-glow"></div></div>
+    </div>
+    <p class="j-lines" aria-label="One pulse. One promise. I'm here for it.">
+      <span data-l="0">One pulse.</span>
+      <span data-l="1">One promise.</span>
+      <span data-l="2">I&rsquo;m here for it.</span>
+    </p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — real wearers, from the Loox reviews -->
+<section class="testis block" id="community">
+  <div class="wrap">
+    <div class="testi-head">
+      <h2>Join the community.</h2>
+    </div>
+    <div class="tcar-wrap">
+      <button class="tcar-btn prev" aria-label="Previous testimonials" type="button">&#8592;</button>
+      <div class="tcar" id="tcar">
+        <figure class="tcard" style="background-image:url('assets/people/vex-king-card.jpg')">
+          <div class="tcard-copy">
+            <blockquote>&ldquo;Stillness holds countless answers, clarity, and a deep sense of peace.&rdquo;</blockquote>
+            <p>Each calming vibration gently guides you away from the noise of the world, helping you reconnect with yourself, right here, in the present moment.</p>
+            <figcaption><b>Vex King</b><span>No.1 Sunday Times bestselling author</span></figcaption>
+          </div>
+        </figure>
+        <figure class="tcard" style="background-image:url('assets/people/cory-allen-card.jpg')">
+          <div class="tcard-copy">
+            <blockquote>&ldquo;The biggest challenge people face is remembering to be present.&rdquo;</blockquote>
+            <p>As someone who has taught millions of people how to live mindfully, I can tell you the biggest challenge is remembering to be present when you are already distracted.</p>
+            <figcaption><b>Cory Allen</b><span>Mindfulness author &amp; podcaster</span></figcaption>
+          </div>
+        </figure>
+        <figure class="tcard" style="background-image:url('assets/people/alex-elle-card.jpg')">
+          <div class="tcard-copy">
+            <blockquote>&ldquo;A grounding reminder to be where my feet are.&rdquo;</blockquote>
+            <p>As a woman, mother, and wife with ADHD, each gentle vibration from this beautifully designed ring serves as a grounding reminder to slow down, breathe, and truly be where my feet are.</p>
+            <figcaption><b>Alex Elle</b><span>NYT bestselling author</span></figcaption>
+          </div>
+        </figure>
+        <figure class="tcard" style="background-image:url('assets/people/kelly-smith-card.jpg')">
+          <div class="tcard-copy">
+            <blockquote>&ldquo;Mindfulness isn't found once a day.&rdquo;</blockquote>
+            <p>The magic of mindfulness is found in all of the small moments that are often forgotten or passed by while our minds are elsewhere.</p>
+            <figcaption><b>Kelly Smith</b><span>Yoga &amp; meditation teacher</span></figcaption>
+          </div>
+        </figure>
+        <figure class="tcard" style="background-image:url('assets/people/jon-prince-card.jpg')">
+          <div class="tcard-copy">
+            <blockquote>&ldquo;Not only helpful. Essential.&rdquo;</blockquote>
+            <p>It's easy to get distracted in today's modern world. A simple tool that keeps you grounded, present and focused on your intentions is essential.</p>
+            <figcaption><b>Jon Prince</b><span>Self-awareness coach &amp; speaker</span></figcaption>
+          </div>
+        </figure>
+        <figure class="tcard" style="background-image:url('assets/people/katharina-minwegen-card.jpg')">
+          <div class="tcard-copy">
+            <blockquote>&ldquo;The vibration alone instantly brings a sense of calm.&rdquo;</blockquote>
+            <p>I began by taking three deep breaths every time the ring vibrated. Now, the unique vibration alone instantly brings a sense of calm.</p>
+            <figcaption><b>Katharina Minwegen</b><span>Mindfulness expert &amp; life coach</span></figcaption>
+          </div>
+        </figure>
+      </div>
+      <button class="tcar-btn next" aria-label="More testimonials" type="button">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="offer block" id="offer">
+  <div class="wrap">
+    <div class="collage-wrap">
+      <img decoding="async" class="collage" src="assets/collage.jpg" alt="A layered collage: an elder, a woman with closed eyes, a young man at golden hour, a mother with her toddler, and a couple touching fingertips, every hand wearing the Pulse ring with gold ripples weaving between them" width="2752" height="1536" loading="lazy" >
+      <div class="collage-pulse" aria-hidden="true"></div>
+    </div>
+    <p class="outro">When it pulses, everyone returns at once.</p>
+    <h2 style="margin-top:3rem">Two ways to get your ring</h2>
+    <div class="chip-row"><span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 off</span></div>
+    <div class="paths-grid" id="paths">
+      <div class="path gate" data-path="gate">
+        <div class="path-body">
+          <span class="path-badge scarce">Only 200 on site</span>
+          <h3>Pulse in person</h3>
+          <ul class="path-list">
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Reserve now, collect at the gate</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Wear it for totality on August 12</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 off, applied automatically</li>
+          </ul>
+          <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Reserve my ring</a>
+          <p class="note">No restock on the peninsula.</p>
+        </div>
+      </div>
+      <div class="path" data-path="home">
+        <div class="path-body">
+          <span class="path-badge">Free 2-day delivery</span>
+          <h3>Pulse at home</h3>
+          <ul class="path-list">
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered free, second day</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Order by August 7 to wear it live</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 off, applied automatically</li>
+          </ul>
+          <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Ship my ring</a>
+          <p class="note">After August 7 it arrives as your integration companion.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <p class="batch">Rings remaining in this release: <b id="rings-left">1,482</b><!-- TODO (dev owner TBD): wire to live inventory count -->. Ordering closes October 1.</p>
+    </div>
+  </div>
+</section>
+
+<section class="community block" id="rsvp">
+  <div class="wrap">
+    <div class="cards">
+      <div class="ccard gift">
+        <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="9" rx="1.5"/><path d="M12 10v9M4 10h16"/><path d="M12 10c-1.2-3.2-5.2-4-5.2-1.4S12 10 12 10Zm0 0c1.2-3.2 5.2-4 5.2-1.4S12 10 12 10Z"/></svg>
+        <h2>Pulse together</h2>
+        <p>Send your code to whoever should be in the silence with you. Free express shipping, a $45 value, so their ring lands before August 12.</p>
+        <div class="value">
+          <!-- TODO (dev owner TBD): replace with the impact.com advocate enrollment URL for the Pulse referral program -->
+          <a class="btn-outline" href="https://pulsemindfulness.com/referral">Get my referral code</a>
+        </div>
+        <p class="fine-note">One code, as many people as you like.</p>
+      </div>
+      <div class="ccard">
+        <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="1.4" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9 9 0 0 1 13 0"/></svg>
+        <h2>RSVP for the live transmission</h2>
+        <p>August 12, 17:47 UTC. The link finds you before totality, with notes to prepare your space.</p>
+        <!-- TODO (dev owner TBD): point this form at the ESP (Klaviyo/Mailchimp) RSVP list before Aug 5 -->
+        <form id="watch-form">
+          <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+          <button class="btn-outline" type="submit">RSVP</button>
+        </form>
+        <p class="thanks" id="watch-thanks">You're in. The link and your prep notes arrive before August 12. Want the pulse with you when it happens? <a class="buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATION DAY -->
+
+<!-- MONTAGE — the pulse, felt together -->
+
+<!-- DUO — the relationship of two things -->
+
+<!-- OFFER -->
+
+<!-- COMMUNITY: RSVP + REFERRAL -->
+
+<!-- FINAL CTA -->
+
+<section class="final block">
+  <video preload="none" class="final-bg" poster="assets/final-ring-poster.jpg" autoplay muted loop playsinline src="assets/final-ring.mp4" aria-hidden="true"></video>
+  <div class="wrap">
+    <div class="lockup" role="img" aria-label="Pulse and Unify">
+      <span class="lk-brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#fbcd66" stroke-width="1.2" opacity=".4"/><circle cx="13" cy="13" r="7" fill="none" stroke="#fbcd66" stroke-width="2.6"/></svg>PULSE</span>
+      <span class="lk-x">×</span>
+      <span class="lk-brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9.5" fill="#0d1030" stroke="#fbcd66" stroke-width="1.6"/><path d="M5.5 9.5a9.5 9.5 0 0 1 15 0" fill="none" stroke="#fff7e0" stroke-width="1.6" stroke-linecap="round" opacity=".9"/></svg>UNIFY</span>
+    </div>
+    <h2>Let's be present together.</h2>
+    <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+    <p class="fine">Totality over Snæfellsjökull · August 12 · 17:47 UTC</p>
+  </div>
+</section>
+
+<footer>
+  <div>Pulse Mindfulness · The Ceremony Garden</div>
+  <div class="partner">Official mindfulness partner · Iceland Eclipse Festival</div>
+</footer>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar" id="sticky">
+  <span class="off"><b>$100 off</b> · Eclipse offer</span>
+  <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+</div>
+
+<script src="assets/worldgrid.js"></script>
+<script src="assets/icelandgrid.js"></script>
+<script>
+/* Page phases: pre-eclipse -> integration -> ordering close.
+   One clock in the hero; copy elsewhere follows the phase. */
+const TOTALITY=new Date('2026-08-12T17:47:00Z');
+const CEREMONY=new Date('2026-08-14T19:00:00Z');
+const RELEASE_CLOSE=new Date('2026-10-01T23:59:00Z');
+const EXPRESS=new Date('2026-08-08T05:00:00Z');
+const localTot=TOTALITY.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+const STATES=[
+  {t:TOTALITY, label:'To totality over Snæfellsjökull · Aug 12 · '+localTot+' your time'},
+  {t:CEREMONY, label:'To the closing circle · The Ceremony Garden'},
+  {t:RELEASE_CLOSE, label:'Until ordering closes · October 1', now:'Ordering has closed'}
+];
+const cd=document.getElementById('cd'), cdl=document.getElementById('cd-label'), ctaT=document.getElementById('cta-timer');
+function tick(){
+  const nowMs=Date.now();
+  let s=STATES.find(x=>x.t-nowMs>0);
+  if(!s){ cd.textContent=''; cdl.textContent=STATES[2].now; if(ctaT)ctaT.textContent=''; return; }
+  const d=s.t-nowMs;
+  const days=Math.floor(d/864e5), h=Math.floor(d%864e5/36e5), m=Math.floor(d%36e5/6e4);
+  cd.textContent=(days?days+'d ':'')+h+'h '+m+'m';
+  cdl.textContent=s.label;
+  if(ctaT)ctaT.textContent=(days?days+'d ':'')+h+'h '+m+'m';
+  setTimeout(tick,30000);
+}
+tick();
+
+/* Phase-aware copy swaps so the page never goes stale */
+function twoLines(el,a,b){
+  el.replaceChildren(document.createTextNode(a),document.createElement('br'),document.createTextNode(b));
+}
+const now=Date.now();
+if(now>EXPRESS){
+  const home=document.querySelector('[data-path="home"]');
+  home.querySelector('p').textContent='Yours arrives as your integration companion.';
+  home.querySelector('.note').textContent='Your intention is set at the closing circle. The ring meets you at home and carries it forward.';
+}
+if(now>TOTALITY){
+  twoLines(document.querySelector('.hero h1'),'Totality passed.','Presence remains.');
+  document.querySelector('.hero .sub').textContent='One pulse still brings you back.';
+  const b=document.querySelector('.broadcast');
+  b.querySelector('h2').textContent='The ceremony continues.';
+  const leads=b.querySelectorAll('.lead');
+  leads[0].textContent='Totality has passed. The integration is just beginning.';
+  leads[1].textContent='Watch the ceremony recording and set your intention with us.';
+}
+if(now>CEREMONY){
+  document.querySelector('.integration .kicker').textContent='The closing circle';
+  const gate=document.querySelector('[data-path="gate"]');
+  if(gate)gate.remove();
+  const grid=document.getElementById('paths');
+  grid.style.gridTemplateColumns='1fr';
+  grid.style.maxWidth='560px';
+  grid.style.margin='2.4rem auto 0';
+  document.querySelector('.offer h2').textContent='Your ring finds you at home';
+}
+
+/* World map — one pulse from Iceland to five hundred wearers */
+const wm=document.getElementById('worldmap');
+if(wm&&typeof WORLD_DOTS!=='undefined'){
+  const wctx=wm.getContext('2d');
+  const ICE={x:(180-18.5)/360,y:(90-64.9)/180};
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  const rand=mulberry32(20260812);
+  const inland=WORLD_DOTS.filter(d=>d[1]>7);
+  const nodes=[];
+  for(let i=0;i<500;i++){
+    const c=inland[Math.floor(rand()*inland.length)];
+    const nx=(c[0]+0.2+rand()*0.6)/WORLD_COLS, ny=(c[1]+0.2+rand()*0.6)/WORLD_ROWS;
+    nodes.push({x:nx,y:ny,d:Math.hypot(nx-ICE.x,(ny-ICE.y)*0.5),tw:rand()*6.28});
+  }
+  const maxD=nodes.reduce((m,n)=>Math.max(m,n.d),0);
+  const wmReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let wmW=0,wmH=0,wmRun=false,wmBase=null;
+  function wmSize(){
+    const r=wm.getBoundingClientRect(), dpr=Math.min(1.5,devicePixelRatio||1);
+    wmW=r.width; wmH=r.width/2;
+    wm.width=Math.round(wmW*dpr); wm.height=Math.round(wmH*dpr);
+    wctx.setTransform(dpr,0,0,dpr,0,0);
+    wmBase=document.createElement('canvas');
+    wmBase.width=wm.width; wmBase.height=wm.height;
+    const b=wmBase.getContext('2d');
+    b.setTransform(dpr,0,0,dpr,0,0);
+    const dotR=Math.max(1,wmW/WORLD_COLS*0.2);
+    b.fillStyle='rgba(240,246,249,.10)';
+    for(const d of WORLD_DOTS){
+      b.beginPath();
+      b.arc((d[0]+0.5)/WORLD_COLS*wmW,(d[1]+0.5)/WORLD_ROWS*wmH,dotR,0,6.283);
+      b.fill();
+    }
+  }
+  function wmDraw(tms){
+    const t=(tms/1000)%8, prog=t/8;
+    wctx.clearRect(0,0,wmW,wmH);
+    const dotR=Math.max(1,wmW/WORLD_COLS*0.2);
+    if(wmBase)wctx.drawImage(wmBase,0,0,wmW,wmH);
+    const front=prog*maxD*1.12, band=maxD*0.16;
+    for(const n of nodes){
+      const gap=Math.abs(n.d-front);
+      const hit=Math.exp(-(gap*gap)/(2*band*band));
+      const twinkle=wmReduced?0:0.08*Math.sin(tms/1400+n.tw);
+      const a=Math.min(1,0.22+twinkle+hit*0.75);
+      const r=dotR*(1+hit*1.15);
+      wctx.fillStyle='rgba(251,205,102,'+a.toFixed(3)+')';
+      wctx.beginPath();
+      wctx.arc(n.x*wmW,n.y*wmH,r,0,6.283);
+      wctx.fill();
+    }
+    const ix=ICE.x*wmW, iy=ICE.y*wmH;
+    for(let k=0;k<3;k++){
+      const rp=((prog+k/3)%1);
+      const rr=rp*wmW*0.11;
+      wctx.strokeStyle='rgba(251,205,102,'+(0.5*(1-rp)).toFixed(3)+')';
+      wctx.lineWidth=1.4;
+      wctx.beginPath(); wctx.arc(ix,iy,rr,0,6.283); wctx.stroke();
+    }
+    const g=wctx.createRadialGradient(ix,iy,0,ix,iy,dotR*7);
+    g.addColorStop(0,'rgba(255,247,224,.95)');g.addColorStop(.4,'rgba(251,205,102,.55)');g.addColorStop(1,'rgba(251,205,102,0)');
+    wctx.fillStyle=g;
+    wctx.beginPath(); wctx.arc(ix,iy,dotR*7,0,6.283); wctx.fill();
+    wctx.fillStyle='#fff7e0';
+    wctx.beginPath(); wctx.arc(ix,iy,dotR*1.6,0,6.283); wctx.fill();
+  }
+  function wmLoop(ts){ if(!wmRun)return; wmDraw(ts); if(!wmReduced)requestAnimationFrame(wmLoop); }
+  wmSize();
+  addEventListener('resize',function(){wmSize(); if(wmReduced)wmDraw(3000)});
+  new IntersectionObserver(function(en){
+    const vis=en[0].isIntersecting;
+    if(vis&&!wmRun){wmRun=true;requestAnimationFrame(wmLoop)}
+    else if(!vis){wmRun=false}
+  },{rootMargin:'120px'}).observe(wm);
+  if(wmReduced){wmRun=true;wmDraw(3000)}
+}
+
+/* Videos: play only while visible, so nothing decodes off-screen */
+document.querySelectorAll('video[autoplay]').forEach(function(v){
+  v.pause();
+  new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){ if(v.readyState===0)v.load(); v.play().catch(function(){}); }
+    else v.pause();
+  },{rootMargin:'220px'}).observe(v);
+});
+
+/* One scroll scheduler: a single listener, a single rAF, every updater runs once per frame */
+const SCROLL_FNS=[];let _stk=false;
+function onScrollFrame(fn){SCROLL_FNS.push(fn)}
+function _runScroll(){_stk=false;for(let i=0;i<SCROLL_FNS.length;i++)SCROLL_FNS[i]()}
+function _reqScroll(){if(!_stk){_stk=true;requestAnimationFrame(_runScroll)}}
+addEventListener('scroll',_reqScroll,{passive:true});
+addEventListener('resize',_reqScroll,{passive:true});
+
+/* Look-up sequence: cool frames, then the turn */
+const lookup=document.querySelector('.lookup');
+if(lookup){
+  new IntersectionObserver(function(es,ob){
+    if(es[0].isIntersecting){lookup.classList.add('seen');ob.disconnect();}
+  },{threshold:.2}).observe(lookup);
+}
+
+/* Page break — reveal the line, drift the circle */
+const oneBreak=document.querySelector('.onebreak');
+if(oneBreak){
+  const obBg=oneBreak.querySelector('.onebreak-bg');
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ oneBreak.classList.add('seen'); } });
+  },{threshold:.35}).observe(oneBreak);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    onScrollFrame(function(){
+      const r=oneBreak.getBoundingClientRect();
+      if(r.bottom<0||r.top>innerHeight) return;
+      const p=(innerHeight-r.top)/(innerHeight+r.height);
+      obBg.style.transform='translateY('+((p-.5)*-46).toFixed(1)+'px) scale(1.08)';
+    });
+  }
+}
+
+/* Testimonial carousel arrows */
+const tcar=document.getElementById('tcar');
+if(tcar){
+  const step=()=>Math.min(720,tcar.clientWidth*.8);
+  document.querySelector('.tcar-btn.prev').addEventListener('click',()=>tcar.scrollBy({left:-step(),behavior:'smooth'}));
+  document.querySelector('.tcar-btn.next').addEventListener('click',()=>tcar.scrollBy({left:step(),behavior:'smooth'}));
+}
+
+/* Hero parallax — the ring drifts behind the text */
+const heroBg=document.querySelector('.hero-bg');
+if(heroBg&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  heroBg.style.transform='scale(1.12)';
+  onScrollFrame(function(){
+    if(window.scrollY>innerHeight+120) return;
+    const y=Math.min(window.scrollY,innerHeight);
+    heroBg.style.transform='translateY('+(y*.32).toFixed(1)+'px) scale(1.12)';
+  });
+}
+
+/* Collage — subjects settle gently as you scroll */
+const collage=document.querySelector('.collage');
+if(collage&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  onScrollFrame(function(){
+    const r=collage.getBoundingClientRect();
+    if(r.bottom<-60||r.top>innerHeight+60) return;
+    const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight+r.height)));
+    collage.style.transform='scale('+(1.12-0.1*p).toFixed(4)+')';
+  });
+}
+
+/* Illustrated Iceland — dotted island, Snæfellsnes glowing */
+const iceC=document.getElementById('icelandmap');
+if(iceC&&typeof ICE_DOTS!=='undefined'){
+  const ictx=iceC.getContext('2d');
+  let iceW=0,iceH=0;
+  function iceLayout(){
+    const dpr=Math.min(1.5,devicePixelRatio||1);
+    iceW=iceC.clientWidth; iceH=iceC.clientHeight;
+    iceC.width=iceW*dpr; iceC.height=iceH*dpr;
+    ictx.setTransform(dpr,0,0,dpr,0,0);
+    const gridAsp=ICE_COLS/ICE_ROWS;
+    let w=iceW*0.74; let h=w/gridAsp;
+    if(h>iceH*0.62){h=iceH*0.62;w=h*gridAsp;}
+    const ox=iceW/2-ICE_SNAEF[0]*w, oy=iceH/2-ICE_SNAEF[1]*h;
+    window.__iceGeo={ox,oy,w,h};
+    window.__iceDot={x:(ox+ICE_SNAEF[0]*w)/iceW, y:(oy+ICE_SNAEF[1]*h)/iceH};
+    const dpr2=Math.min(1.5,devicePixelRatio||1);
+    window.__iceBase=document.createElement('canvas');
+    window.__iceBase.width=iceC.width; window.__iceBase.height=iceC.height;
+    const bx=window.__iceBase.getContext('2d');
+    bx.setTransform(dpr2,0,0,dpr2,0,0);
+    const cell=w/ICE_COLS, rr=Math.max(1.1,cell*0.26);
+    bx.fillStyle='rgba(251,205,102,.30)';
+    for(const [c,rw] of ICE_DOTS){
+      bx.beginPath();
+      bx.arc(ox+(c+.5)*cell, oy+(rw+.5)*(h/ICE_ROWS), rr, 0, 6.2832);
+      bx.fill();
+    }
+  }
+  function iceDraw(t){
+    const g=window.__iceGeo; if(!g)return;
+    ictx.clearRect(0,0,iceW,iceH);
+    if(window.__iceBase)ictx.drawImage(window.__iceBase,0,0,iceW,iceH);
+    const sx=g.ox+ICE_SNAEF[0]*g.w, sy=g.oy+ICE_SNAEF[1]*g.h;
+    const ph=(t/8000)%1;
+    for(let k=0;k<2;k++){
+      const q=(ph+k*0.5)%1;
+      ictx.strokeStyle='rgba(251,205,102,'+(0.5*(1-q)).toFixed(3)+')';
+      ictx.lineWidth=1.6;
+      ictx.beginPath(); ictx.arc(sx,sy,6+q*Math.min(iceW,iceH)*0.22,0,6.2832); ictx.stroke();
+    }
+    const gr=ictx.createRadialGradient(sx,sy,0,sx,sy,26);
+    gr.addColorStop(0,'rgba(255,247,224,.95)');gr.addColorStop(.4,'rgba(251,205,102,.6)');gr.addColorStop(1,'rgba(251,205,102,0)');
+    ictx.fillStyle=gr; ictx.beginPath(); ictx.arc(sx,sy,26,0,6.2832); ictx.fill();
+    ictx.fillStyle='#fff7e0'; ictx.beginPath(); ictx.arc(sx,sy,3.4,0,6.2832); ictx.fill();
+  }
+  iceLayout();
+  addEventListener('resize',iceLayout,{passive:true});
+  let iceRun=false;
+  function iceLoop(t){
+    if(!iceRun)return;
+    if((window.__jp||0)<0.3) iceDraw(t||0);
+    requestAnimationFrame(iceLoop);
+  }
+  new IntersectionObserver(function(en){
+    const vis=en[0].isIntersecting;
+    if(vis&&!iceRun){iceRun=true;requestAnimationFrame(iceLoop)}
+    else if(!vis){iceRun=false}
+  },{rootMargin:'80px'}).observe(iceC);
+}
+
+/* Journey — Iceland → altar ripple → the whole world */
+const jSec=document.querySelector('.journey');
+if(jSec&&wm){
+  const jZoom=jSec.querySelector('.j-zoom'), jRings=jSec.querySelector('.j-rings'),
+        jGlow=jSec.querySelector('.j-glow'), jLines=[...jSec.querySelectorAll('.j-lines span')],
+        jReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp01=v=>Math.min(1,Math.max(0,v));
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const easeIO=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const jAerial=jSec.querySelector('.j-aerial'), jTrod2=jSec.querySelector('.j-trod2');
+  function jTick(){
+    if(jReduced){
+      jZoom.style.display='none'; jAerial.style.display='none'; jTrod2.style.display='none';
+      wm.style.opacity=1;
+      jLines.forEach(function(el,i){el.style.opacity=(i===3?1:0);});
+      return;
+    }
+    const r=jSec.getBoundingClientRect();
+    if(r.bottom<-80||r.top>innerHeight+80) return;
+    const p=clamp01(-r.top/(r.height-innerHeight));
+    window.__jp=p;
+    /* A: the Circle of Tröð from above, diving toward the water altar — altar glides to center.
+       The altar sits at (50.5%, 40%) of the image FILE; account for object-fit:cover crop. */
+    const aQ=clamp01(p/.185);
+    const aS=lerp(1,2.9,Math.pow(aQ,1.6));
+    let atx=0, aty=0;
+    if(window.__iceDot){
+      const px=window.__iceDot.x*innerWidth, py=window.__iceDot.y*innerHeight;
+      jAerial.style.transformOrigin=px.toFixed(1)+'px '+py.toFixed(1)+'px';
+      atx=(innerWidth/2-px)*aQ; aty=(innerHeight/2-py)*aQ;
+    }
+    const aO=1-clamp01((p-.2)/.07);
+    jAerial.style.transform='translate('+atx.toFixed(1)+'px,'+aty.toFixed(1)+'px) scale('+aS.toFixed(4)+')';
+    jAerial.style.opacity=aO.toFixed(3);
+    jAerial.style.visibility=aO<.01?'hidden':'visible';
+    /* B: into the Circle of Tröð, down to the water altar */
+    const tS=lerp(.55,6.5,easeIO(clamp01((p-.19)/.31)));
+    const tO=clamp01((p-.19)/.06)*(1-clamp01((p-.45)/.06));
+    jTrod2.style.transform='translate(-50%,-50%) scale('+tS.toFixed(4)+')';
+    jTrod2.style.opacity=tO.toFixed(3);
+    jTrod2.style.visibility=tO<.01?'hidden':'visible';
+    /* C: the altar's light becomes the hand wearing the ring */
+    let scale, tx=0, ty=0, zo;
+    if(p<=.7){
+      scale=lerp(.3,1,easeIO(clamp01((p-.43)/.22)));
+      zo=clamp01((p-.43)/.08);
+    } else {
+      const t=easeIO(clamp01((p-.7)/.25));
+      scale=lerp(1,.055,t);
+      const mr=wm.getBoundingClientRect();
+      const icx=mr.left+.4486*mr.width, icy=mr.top+.1394*mr.height;
+      tx=lerp(0,icx-innerWidth/2,t); ty=lerp(0,icy-innerHeight/2,t);
+      zo=1-clamp01((p-.91)/.05);
+    }
+    jZoom.style.transform='translate('+tx.toFixed(1)+'px,'+ty.toFixed(1)+'px) scale('+scale.toFixed(4)+')';
+    jZoom.style.opacity=zo.toFixed(3);
+    jZoom.style.visibility=zo<.01?'hidden':'visible';
+    jRings.style.opacity=clamp01((p-.58)/.09).toFixed(3);
+    jGlow.style.opacity=(clamp01((p-.44)/.12)*.9).toFixed(3);
+    /* D: zoom out — the world appears, the wave lights the nodes */
+    wm.style.opacity=clamp01((p-.68)/.16).toFixed(3);
+    /* E: one line at a time — the last one lands on the whole world */
+    const WIN=[[.04,.12,.26,.33],[.36,.44,.62,.69],[.72,.81,9,9]];
+    jLines.forEach(function(el,i){
+      const w=WIN[i];
+      const o=clamp01((p-w[0])/(w[1]-w[0])) * (w[2]>1?1:(1-clamp01((p-w[2])/(w[3]-w[2]))));
+      el.style.opacity=o.toFixed(3);
+      el.style.transform='translateY('+(-50+ (1-o)*2.2).toFixed(2)+'%)';
+    });
+  }
+  onScrollFrame(jTick);
+  window.__jTick=jTick;
+  jTick();
+  /* QA: #jp=0.55 loads the journey at that progress */
+  const jpm=location.hash.match(/jp=([\d.]+)/);
+  if(jpm){const go=function(){window.scrollTo({top:jSec.offsetTop+(jSec.offsetHeight-innerHeight)*(+jpm[1]),behavior:'instant'});jTick();};setTimeout(go,300);setTimeout(go,1200);}
+}
+
+/* UTM pre-sort: unify newsletter/FB traffic sees ship-home first */
+const params=new URLSearchParams(location.search);
+if((params.get('src')||'').toLowerCase()==='unify'){
+  const grid=document.getElementById('paths');
+  grid.appendChild(grid.querySelector('[data-path="gate"]'));
+}
+
+/* Carry inbound params through to the store links */
+const code=params.get('code')||params.get('discount');
+document.querySelectorAll('a.buy').forEach(a=>{
+  const u=new URL(a.href);
+  if(code)u.searchParams.set('discount',code);
+  ['src','utm_source','utm_medium','utm_campaign'].forEach(k=>{if(params.get(k))u.searchParams.set(k,params.get(k))});
+  a.href=u.toString();
+});
+
+/* Sticky bar after hero scrolls off (mobile) */
+const bar=document.getElementById('sticky'), hero=document.querySelector('.hero'), offer=document.querySelector('.final');
+if('IntersectionObserver' in window){
+  let heroGone=false, finalSeen=false;
+  const update=()=>{const show=heroGone&&!finalSeen;bar.classList.toggle('show',show);document.body.classList.toggle('bar-visible',show)};
+  new IntersectionObserver(e=>{heroGone=!e[0].isIntersecting;update()},{threshold:.05}).observe(hero);
+  new IntersectionObserver(e=>{finalSeen=e[0].isIntersecting;update()},{threshold:.2}).observe(offer);
+}
+
+/* Cycle video — parallax drift + pause offscreen */
+const cyv=document.querySelector('.cycle-video');
+if(cyv){
+  new IntersectionObserver(function(e){ if(e[0].isIntersecting){cyv.play().catch(function(){})}else{cyv.pause()} },{rootMargin:'120px'}).observe(cyv);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    onScrollFrame(function(){
+      const r=cyv.parentElement.getBoundingClientRect();
+      if(r.bottom<-60||r.top>innerHeight+60) return;
+      const p=(innerHeight-r.top)/(innerHeight+r.height);
+      cyv.style.transform='translateY('+((p-.5)*10).toFixed(2)+'%)';
+    });
+  }
+}
+
+/* Autopilot hero — parallax drift */
+const autoBg=document.querySelector('.auto-bg');
+if(autoBg&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  onScrollFrame(function(){
+    const r=autoBg.parentElement.getBoundingClientRect();
+    if(r.bottom<-80||r.top>innerHeight+80) return;
+    const p=(innerHeight-r.top)/(innerHeight+r.height);
+    autoBg.style.transform='translateY('+((p-.5)*-58).toFixed(1)+'px) scale(1.14)';
+  });
+}
+
+/* Final video only decodes while on screen */
+const fv=document.querySelector('.final-bg');
+if(fv)new IntersectionObserver(function(e){
+  if(e[0].isIntersecting){fv.play().catch(function(){})}else{fv.pause()}
+},{rootMargin:'100px'}).observe(fv);
+
+/* Watch-live capture: confirmation re-offers the ring.
+   TODO (dev owner TBD): point this at the ESP endpoint (Klaviyo/Mailchimp) before Aug 5. */
+document.getElementById('watch-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.style.display='none';
+  document.getElementById('watch-thanks').style.display='block';
+});
+</script>
+</body>
+</html>
