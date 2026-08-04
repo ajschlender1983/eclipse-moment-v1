@@ -63,10 +63,23 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .hero .cta-row{display:flex;flex-direction:column;align-items:center;gap:.75rem;margin-bottom:2.6rem}
 
 /* countdown strip */
-.strip{border-top:1px solid rgba(240,246,249,.16);background:rgba(13,16,48,.72)}
-.strip-inner{width:min(1080px,92%);margin:0 auto;display:flex;justify-content:center;align-items:baseline;gap:1rem;padding:1.05rem 0;flex-wrap:wrap;text-align:center}
-.strip .n{font-size:1.3rem;font-weight:700;color:var(--solar);font-variant-numeric:tabular-nums}
-.strip .l{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.strip{position:relative;border-top:1px solid rgba(251,205,102,.22);background:linear-gradient(180deg,rgba(13,16,48,.94),rgba(11,10,22,.97));overflow:hidden}
+.strip-inner{position:relative;width:min(1180px,94%);margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,4vw,3rem);padding:1.5rem 0 1.6rem;text-align:center}
+#stripice{width:clamp(96px,13vw,168px);aspect-ratio:1.42;display:block;opacity:.95}
+.strip-kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.strip-clock{display:flex;justify-content:center;gap:clamp(.5rem,2vw,1.15rem);margin:.5rem 0 .45rem}
+.strip-clock div{min-width:3.1rem}
+.strip-clock b{display:block;font-size:clamp(1.5rem,3.6vw,2.3rem);font-weight:700;color:var(--solar);font-variant-numeric:tabular-nums;line-height:1}
+.strip-clock i{display:block;font-style:normal;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,246,249,.5);margin-top:.3rem}
+.strip-where{font-size:.74rem;letter-spacing:.06em;color:var(--dim)}
+.strip-zones{display:grid;grid-template-columns:repeat(2,auto);gap:.3rem 1.15rem;text-align:left}
+.strip-zones div{font-size:.72rem;color:rgba(240,246,249,.62);white-space:nowrap;font-variant-numeric:tabular-nums}
+.strip-zones b{color:var(--glacier);font-weight:700}
+@media (max-width:880px){
+  .strip-inner{grid-template-columns:1fr;gap:.9rem;padding:1.2rem 0 1.3rem}
+  #stripice{margin:0 auto;width:88px}
+  .strip-zones{grid-template-columns:repeat(2,auto);justify-content:center;text-align:center}
+}
 
 /* ---------- sections ---------- */
 section{position:relative}
@@ -153,7 +166,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 }
 
 /* integration */
-.integration{background:linear-gradient(180deg,var(--midnight),var(--volcanic))}
+.integration{background:linear-gradient(180deg,#0b0a16 0%,#0b0a16 12%,var(--volcanic) 100%)}
 .integration .wrap{max-width:680px}
 .kicker{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:1rem}
 .integration p{margin-top:1.1rem}
@@ -224,9 +237,11 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .j-lines span[data-l="2"]{color:var(--solar);top:calc(50% + min(23.5vw,270px) + 2.8rem)}
 
 /* testimonials */
-.testis{position:relative;z-index:6;margin-top:-42vh;background:radial-gradient(75% 60% at 30% 34%, rgba(73,41,145,.30), transparent 65%), radial-gradient(55% 45% at 82% 62%, rgba(244,39,137,.13), transparent 70%), linear-gradient(180deg, rgba(11,10,22,0) 0, rgba(11,10,22,.72) 14vh, #0b0a16 30vh, var(--volcanic) 100%)}
+.testis{position:relative;overflow:hidden;z-index:6;margin-top:-42vh;background:radial-gradient(75% 60% at 30% 34%, rgba(73,41,145,.30), transparent 65%), radial-gradient(55% 45% at 82% 62%, rgba(244,39,137,.13), transparent 70%), linear-gradient(180deg, rgba(11,10,22,0) 0, rgba(11,10,22,.72) 14vh, #0b0a16 30vh, var(--volcanic) 100%)}
 .testi-head{text-align:center;max-width:34ch;margin:0 auto}
 .tcar-wrap{position:relative;margin-top:2.6rem}
+.tcar-wrap::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150vw;height:150%;pointer-events:none;z-index:0;background:radial-gradient(58% 46% at 50% 50%, rgba(255,138,61,.20), rgba(251,205,102,.10) 42%, rgba(255,138,61,.045) 62%, transparent 80%)}
+.tcar{position:relative;z-index:1}
 .tcar{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.2rem .2rem 1rem;scrollbar-width:none}
 .tcar::-webkit-scrollbar{display:none}
 .tcard{flex:0 0 min(78vw,340px);aspect-ratio:3/4;scroll-snap-align:center;border-radius:18px;overflow:hidden;background-size:cover;background-position:top center;border:1px solid rgba(255,138,61,.55);box-shadow:0 0 22px rgba(255,138,61,.22), 0 0 60px rgba(251,205,102,.10), inset 0 0 0 1px rgba(251,205,102,.12);display:flex;align-items:flex-end;position:relative}
@@ -344,8 +359,13 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
   </div>
   <div class="strip">
     <div class="strip-inner" aria-live="off">
-      <span class="n" id="cd">&nbsp;</span>
-      <span class="l" id="cd-label">To totality over Snæfellsjökull · Aug 12 · 17:47 UTC</span>
+      <canvas id="stripice" aria-hidden="true"></canvas>
+      <div class="strip-mid">
+        <p class="strip-kicker" id="cd-label">Countdown to totality</p>
+        <div class="strip-clock" id="cd"></div>
+        <p class="strip-where">Snæfellsjökull, Iceland &middot; August 12 &middot; 17:47 UTC</p>
+      </div>
+      <div class="strip-zones" id="zones"></div>
     </div>
   </div>
 </header>
@@ -566,10 +586,10 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
       </svg>
       <div class="j-photo"><img decoding="async" src="assets/eclipse-hand.jpg" alt=""><div class="j-glow"></div></div>
     </div>
-    <p class="j-lines" aria-label="One pulse. One promise. I'm here for it.">
-      <span data-l="0">One pulse.</span>
-      <span data-l="1">One promise.</span>
-      <span data-l="2">I&rsquo;m here for it.</span>
+    <p class="j-lines" aria-label="One pause. One practice. One pulse.">
+      <span data-l="0">One pause.</span>
+      <span data-l="1">One practice.</span>
+      <span data-l="2">One pulse.</span>
     </p>
   </div>
 </section>
@@ -750,23 +770,76 @@ const RELEASE_CLOSE=new Date('2026-10-01T23:59:00Z');
 const EXPRESS=new Date('2026-08-08T05:00:00Z');
 const localTot=TOTALITY.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
 const STATES=[
-  {t:TOTALITY, label:'To totality over Snæfellsjökull · Aug 12 · '+localTot+' your time'},
-  {t:CEREMONY, label:'To the closing circle · The Ceremony Garden'},
-  {t:RELEASE_CLOSE, label:'Until ordering closes · October 1', now:'Ordering has closed'}
+  {t:TOTALITY,      title:'Countdown to totality',
+   where:'Snæfellsjökull, Iceland · August 12 · 17:47 UTC · '+localTot+' your time'},
+  {t:CEREMONY,      title:'Countdown to the closing circle',
+   where:'The Ceremony Garden · August 14 · 19:00 Iceland time'},
+  {t:RELEASE_CLOSE, title:'Until ordering closes',
+   where:'This release closes October 1', now:'Ordering has closed'}
 ];
-const cd=document.getElementById('cd'), cdl=document.getElementById('cd-label'), ctaT=document.getElementById('cta-timer');
+const cd=document.getElementById('cd'), cdl=document.getElementById('cd-label'), cdw=document.querySelector('.strip-where'), ctaT=document.getElementById('cta-timer');
+const ZONES=[
+  {l:'Reykjavík', tz:'Atlantic/Reykjavik'},
+  {l:'London',    tz:'Europe/London'},
+  {l:'Berlin',    tz:'Europe/Berlin'},
+  {l:'New York',  tz:'America/New_York'},
+  {l:'Los Angeles',tz:'America/Los_Angeles'},
+  {l:'Sydney',    tz:'Australia/Sydney'}
+];
+const zonesEl=document.getElementById('zones');
+if(zonesEl){
+  zonesEl.innerHTML=ZONES.map(function(z){
+    var t=new Intl.DateTimeFormat('en-US',{timeZone:z.tz,hour:'numeric',minute:'2-digit',weekday:'short'}).format(TOTALITY);
+    return '<div><b>'+z.l+'</b> '+t+'</div>';
+  }).join('');
+}
+function pad(n){return n<10?'0'+n:''+n}
 function tick(){
   const nowMs=Date.now();
-  let s=STATES.find(x=>x.t-nowMs>0);
-  if(!s){ cd.textContent=''; cdl.textContent=STATES[2].now; if(ctaT)ctaT.textContent=''; return; }
-  const d=s.t-nowMs;
-  const days=Math.floor(d/864e5), h=Math.floor(d%864e5/36e5), m=Math.floor(d%36e5/6e4);
-  cd.textContent=(days?days+'d ':'')+h+'h '+m+'m';
-  cdl.textContent=s.label;
+  let st=STATES.find(x=>x.t-nowMs>0);
+  if(!st){
+    if(cd)cd.innerHTML='<div><b>0</b><i>now</i></div>';
+    if(cdl)cdl.textContent=STATES[2].now;
+    if(cdw)cdw.textContent='';
+    if(ctaT)ctaT.textContent='';
+    return;
+  }
+  const d=st.t-nowMs;
+  const days=Math.floor(d/864e5), h=Math.floor(d%864e5/36e5), m=Math.floor(d%36e5/6e4), sec=Math.floor(d%6e4/1000);
+  if(cd)cd.innerHTML=
+      '<div><b>'+days+'</b><i>days</i></div>'
+    + '<div><b>'+pad(h)+'</b><i>hrs</i></div>'
+    + '<div><b>'+pad(m)+'</b><i>min</i></div>'
+    + '<div><b>'+pad(sec)+'</b><i>sec</i></div>';
+  if(cdl)cdl.textContent=st.title;
+  if(cdw)cdw.textContent=st.where;
   if(ctaT)ctaT.textContent=(days?days+'d ':'')+h+'h '+m+'m';
-  setTimeout(tick,30000);
+  setTimeout(tick,1000);
 }
 tick();
+
+/* dotted Iceland in the banner, same gold grid as the journey */
+(function(){
+  const c=document.getElementById('stripice');
+  if(!c||typeof ICE_DOTS==='undefined')return;
+  const x=c.getContext('2d');
+  function draw(){
+    const dpr=Math.min(2,devicePixelRatio||1), w=c.clientWidth, h=c.clientHeight;
+    if(!w||!h)return;
+    c.width=w*dpr; c.height=h*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    x.clearRect(0,0,w,h);
+    const cw=w/ICE_COLS, ch=h/ICE_ROWS, r=Math.max(.7,Math.min(cw,ch)*.30);
+    x.fillStyle='rgba(251,205,102,.42)';
+    for(const d of ICE_DOTS){ x.beginPath(); x.arc((d[0]+.5)*cw,(d[1]+.5)*ch,r,0,6.2832); x.fill(); }
+    const sx=ICE_SNAEF[0]*w, sy=ICE_SNAEF[1]*h;
+    const g=x.createRadialGradient(sx,sy,0,sx,sy,Math.max(9,w*.11));
+    g.addColorStop(0,'rgba(255,247,224,.95)'); g.addColorStop(.42,'rgba(251,205,102,.5)'); g.addColorStop(1,'rgba(251,205,102,0)');
+    x.fillStyle=g; x.beginPath(); x.arc(sx,sy,Math.max(9,w*.11),0,6.2832); x.fill();
+    x.fillStyle='#fff7e0'; x.beginPath(); x.arc(sx,sy,1.9,0,6.2832); x.fill();
+  }
+  draw();
+  addEventListener('resize',draw,{passive:true});
+})();
 
 /* Phase-aware copy swaps so the page never goes stale */
 function twoLines(el,a,b){
@@ -1083,7 +1156,7 @@ if(jSec&&wm){
     /* D: zoom out — the world appears, the wave lights the nodes */
     wm.style.opacity=clamp01((p-.68)/.16).toFixed(3);
     /* E: one line at a time — the last one lands on the whole world */
-    const WIN=[[.04,.12,.26,.33],[.36,.44,.62,.69],[.72,.81,9,9]];
+    const WIN=[[.03,.11,.24,.32],[.40,.50,.61,.69],[.74,.84,9,9]];
     jLines.forEach(function(el,i){
       const w=WIN[i];
       const o=clamp01((p-w[0])/(w[1]-w[0])) * (w[2]>1?1:(1-clamp01((p-w[2])/(w[3]-w[2]))));
