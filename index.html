@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .beat .icn{margin:0 auto .55rem}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden}
 .hero video,.hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,23,29,.3) 0%,rgba(23,23,29,.12) 40%,rgba(23,23,29,.84) 88%,var(--volcanic) 100%);z-index:-1}
 .hero-inner{width:min(1080px,92%);margin:auto;text-align:center;padding:2rem 0}
@@ -135,9 +135,11 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .frame{border-radius:18px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(240,246,249,.12);position:relative}
 
 /* break autopilot — text band under the invite */
-.autopilot{position:relative;min-height:min(100svh,900px);display:flex;align-items:center;justify-content:center;padding:clamp(3rem,7vh,5rem) 0;overflow:hidden;isolation:isolate;text-align:center}
+.auto-statband{position:relative;z-index:2;background:linear-gradient(180deg,var(--midnight),#0b0a16);border-top:1px solid rgba(251,205,102,.16);padding:clamp(1.2rem,3.2vh,1.9rem) 0}
+.auto-statband .moment-stats{margin-top:0;padding-top:0;border-top:0}
+.autopilot{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;justify-content:center;padding:0 0 clamp(3rem,8vh,5.5rem);overflow:hidden;isolation:isolate;text-align:center}
 .auto-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2;transform:scale(1.14);will-change:transform}
-.auto-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--volcanic) 0,rgba(23,23,29,.35) 18%,rgba(11,10,22,.32) 46%,rgba(11,10,22,.86) 72%,var(--volcanic) 97%)}
+.auto-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,10,22,.72) 0,rgba(23,23,29,.20) 14%,rgba(11,10,22,.14) 40%,rgba(11,10,22,.62) 68%,rgba(11,10,22,.92) 88%,var(--volcanic) 100%)}
 .auto-inner{position:relative;z-index:1;width:min(760px,92%)}
 .autopilot .moment-stats{margin-top:clamp(1.5rem,4vh,2.4rem);border-top:1px solid rgba(240,246,249,.16);padding-top:clamp(1rem,2.6vh,1.5rem)}
 .auto-lock{display:flex;flex-direction:column;align-items:center;gap:.35rem}
@@ -207,11 +209,11 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 }
 
 /* silence — the wordmark over the eclipse */
-.silence-mark{text-align:center;line-height:1;margin-top:clamp(1.6rem,4vh,2.6rem)}
-.sm-top{display:block;font-size:clamp(.62rem,1.5vw,.82rem);letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:rgba(240,246,249,.8);font-weight:500;margin-bottom:.55em}
-.sm-main{display:block;font-size:clamp(2.4rem,8vw,5rem);font-weight:300;letter-spacing:.16em;text-indent:.16em;color:var(--glacier);text-shadow:0 2px 40px rgba(0,0,0,.75)}
-.sm-rule{display:block;width:clamp(70px,16vw,130px);height:1px;margin:.85em auto .7em;background:linear-gradient(90deg,transparent,rgba(251,205,102,.85),transparent)}
-.sm-sub{display:block;font-size:clamp(.62rem,1.5vw,.8rem);letter-spacing:.46em;text-indent:.46em;text-transform:uppercase;color:var(--solar);font-weight:500}
+.silence-mark{position:absolute;left:var(--disc-x,50%);top:var(--disc-y,26%);transform:translate(-50%,-50%);z-index:1;text-align:center;line-height:1;width:max-content;max-width:92%}
+.sm-top{display:block;font-size:clamp(.5rem,1.05vw,.66rem);letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:rgba(240,246,249,.8);font-weight:500;margin-bottom:.55em}
+.sm-main{display:block;font-size:clamp(1.6rem,4.6vw,2.9rem);font-weight:300;letter-spacing:.16em;text-indent:.16em;color:var(--glacier);text-shadow:0 2px 26px rgba(0,0,0,.9)}
+.sm-rule{display:block;width:clamp(50px,10vw,86px);height:1px;margin:.85em auto .7em;background:linear-gradient(90deg,transparent,rgba(251,205,102,.85),transparent)}
+.sm-sub{display:block;font-size:clamp(.5rem,1.05vw,.64rem);letter-spacing:.46em;text-indent:.46em;text-transform:uppercase;color:var(--solar);font-weight:500}
 
 /* the moment — planetary alignment, for whoever is watching */
 .moment{position:relative;background:var(--volcanic);padding:clamp(4.5rem,10vw,8rem) 0}
@@ -383,26 +385,31 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 
 <!-- FOUNDER INVITATION (placeholder thumbnail — video pending) -->
 <!-- BREAK AUTOPILOT -->
+<div class="auto-statband">
+  <div class="wrap">
+    <div class="moment-stats">
+      <div><b>Thousands</b><span>of hands</span></div>
+      <div><b>Two minutes</b><span>of silence</span></div>
+      <div><b>One</b><span>shared intention</span></div>
+    </div>
+  </div>
+</div>
+
 <section class="autopilot">
   <img decoding="async" class="auto-bg" src="assets/autopilot-hand.jpg" alt="A hand wearing the gold Pulse ring raised toward a total eclipse above an Icelandic glacier valley" width="1152" height="2048">
   <div class="auto-veil" aria-hidden="true"></div>
+  <p class="silence-mark" id="silenceMark">
+    <span class="sm-top">Two minutes of</span>
+    <span class="sm-main">Silence</span>
+    <span class="sm-rule" aria-hidden="true"></span>
+    <span class="sm-sub">together</span>
+  </p>
   <div class="wrap auto-inner">
     <p class="auto-over">Thousands of hands united by one pulse.</p>
     <p class="auto-lock">
       <span class="lock-a">Breaking autopilot</span>
       <span class="lock-b">Becoming present.</span>
     </p>
-    <p class="silence-mark">
-      <span class="sm-top">Two minutes of</span>
-      <span class="sm-main">Silence</span>
-      <span class="sm-rule" aria-hidden="true"></span>
-      <span class="sm-sub">together</span>
-    </p>
-    <div class="moment-stats">
-      <div><b>Thousands</b><span>of hands</span></div>
-      <div><b>Two minutes</b><span>of silence</span></div>
-      <div><b>One</b><span>shared intention</span></div>
-    </div>
   </div>
 </section>
 
@@ -1148,6 +1155,30 @@ if(iceC&&typeof ICE_DOTS!=='undefined'){
     else if(!vis){iceRun=false}
   },{rootMargin:'80px'}).observe(iceC);
 }
+
+/* Pin the Silence wordmark to the eclipse disc through the cover-crop + scale */
+(function(){
+  const sec=document.querySelector('.autopilot'), img=document.querySelector('.auto-bg');
+  const mark=document.getElementById('silenceMark');
+  if(!sec||!img||!mark)return;
+  const FX=0.518, FY=0.181;      /* disc centre as a fraction of the source image */
+  const OBJ_Y=0.42, ZOOM=1.14;   /* must match .auto-bg object-position / transform */
+  function place(){
+    const W=sec.clientWidth, H=sec.clientHeight;
+    const nw=img.naturalWidth||558, nh=img.naturalHeight||1000;
+    if(!W||!H||!nw)return;
+    const sc=Math.max(W/nw,H/nh);
+    const rw=nw*sc, rh=nh*sc;
+    const ox=(W-rw)*0.5, oy=(H-rh)*OBJ_Y;
+    let x=ox+FX*rw, y=oy+FY*rh;
+    x=(x-W/2)*ZOOM+W/2;          /* the element is scaled about its centre */
+    y=(y-H/2)*ZOOM+H/2;
+    mark.style.setProperty('--disc-x',x.toFixed(1)+'px');
+    mark.style.setProperty('--disc-y',y.toFixed(1)+'px');
+  }
+  if(img.complete)place(); else img.addEventListener('load',place);
+  addEventListener('resize',place,{passive:true});
+})();
 
 /* World-clock banner: what o'clock totality is, wherever you are */
 (function(){
