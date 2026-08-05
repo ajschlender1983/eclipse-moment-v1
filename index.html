@@ -6,7 +6,7 @@
 <title>Experience Totality Together · Pulse & Unify</title>
 <meta name="description" content="The world's first awareness ring. Live transmission August 12. The closing circle August 14. Set one intention and let every pulse return you to it.">
 <meta property="og:title" content="Experience Totality Together · Pulse & Unify">
-<meta property="og:description" content="Watch the eclipse ceremony live from Iceland. Set one intention. Let every gentle pulse of your ring return you to it. $100 off with the eclipse offer.">
+<meta property="og:description" content="Watch the eclipse ceremony live from Iceland. Set one intention. Let every gentle pulse of your ring return you to it. A $100 gift with the eclipse offer.">
 <!-- TODO (dev owner TBD): og:image must become an ABSOLUTE https URL at deploy or Facebook/iMessage previews will not show the image -->
 <meta property="og:image" content="assets/og.jpg">
 <meta property="og:type" content="website">
@@ -134,6 +134,16 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .ritual-arrow{flex:0 0 auto;align-self:center;width:40px;color:var(--solar);opacity:.55}
 @media (max-width:560px){.ritual-arrow{transform:rotate(90deg);align-self:center;margin:.1rem auto}}
 .ritual-close{font-size:.95rem;color:rgba(240,246,249,.78);margin-bottom:1.6rem}
+/* run of show for the ceremony */
+.integration .ceremony-tag{margin-top:.7rem;font-size:clamp(1.05rem,2.1vw,1.32rem);font-weight:500;color:var(--solar);letter-spacing:-.005em}
+.ros{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(240,246,249,.14);display:flex;flex-direction:column;gap:1rem}
+.ros-head{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--solar);font-weight:700;margin:0 0 .2rem}
+.ros-row{display:flex;gap:1.1rem;align-items:baseline}
+.ros-t{flex:0 0 3.2rem;font-size:.85rem;font-weight:700;color:var(--solar);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.ros-row>div b{display:block;font-size:1rem;margin-bottom:.22rem}
+.ros-row>div span{display:block;font-size:.88rem;line-height:1.45;color:rgba(240,246,249,.7)}
+.integration .ros-note{margin-top:1.3rem;font-size:.85rem;line-height:1.5;color:rgba(240,246,249,.58)}
+@media(max-width:560px){.ros-row{flex-direction:column;gap:.25rem}.ros-t{flex:none}}
 .closing-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .closing p{margin-top:1.1rem}
 
@@ -279,7 +289,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .j-aerial{position:absolute;inset:0;width:100%;height:100%;will-change:transform,opacity}
 .j-trod2{position:absolute;left:50%;top:50%;width:120vmin;aspect-ratio:1;transform:translate(-50%,-50%);opacity:0;will-change:transform,opacity}
 .j-trod2 svg{width:100%;height:100%;display:block}
-#worldmap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(94vw,1080px);aspect-ratio:2/1;opacity:0;will-change:opacity}
+#worldmap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(94vw,1080px);aspect-ratio:2/1;opacity:0;will-change:opacity,transform}
 .j-zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform,opacity}
 .j-rings{width:150vmin;height:150vmin;flex:none;opacity:0;will-change:opacity}
 .j-photo{position:absolute;left:50%;top:50%;width:46vmin;height:46vmin;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden}
@@ -347,6 +357,17 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .tick{width:16px;height:16px;flex:none;margin-top:.18rem;color:var(--teal)}
 .path-cta{display:block;text-align:center;width:100%;padding:.85rem 1rem;font-size:1rem}
 .path .note{font-size:.8rem;color:rgba(240,246,249,.6);margin-top:.75rem;text-align:center}
+/* release meter: starts full, drains to what is actually left */
+.meter{margin-top:1.05rem}
+.meter-track{position:relative;height:7px;border-radius:999px;background:rgba(251,205,102,.12);box-shadow:inset 0 0 0 1px rgba(251,205,102,.22);overflow:hidden}
+.meter-fill{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:999px;
+  background:linear-gradient(90deg,rgba(251,205,102,.85),var(--solar) 62%,var(--corona));
+  box-shadow:0 0 14px rgba(251,205,102,.5);
+  transition:width 2.4s cubic-bezier(.22,.68,.24,1)}
+.meter.scarce .meter-fill{background:linear-gradient(90deg,var(--solar),var(--corona) 55%,#ff6a3d)}
+.meter-label{margin-top:.6rem;font-size:.8rem;letter-spacing:.01em;text-align:center;color:rgba(240,246,249,.66);font-variant-numeric:tabular-nums}
+.meter-label b{color:var(--solar);font-weight:700}
+@media (prefers-reduced-motion: reduce){.meter-fill{transition:none}}
 .offer .cta-row{display:flex;flex-direction:column;align-items:center;gap:.8rem;margin-top:2.6rem}
 .batch{font-size:.92rem;color:var(--dim);text-align:center}
 
@@ -412,7 +433,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     <p class="sub">The world&rsquo;s first awareness ring.</p>
     <div class="cta-row">
       <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
-      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 off</span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 gift</span>
     </div>
   </div>
   <div class="strip">
@@ -657,7 +678,8 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
   <div class="wrap">
     <div>
       <span class="kicker">The closing circle · Friday, August 14 · 19:00 Iceland</span>
-      <h2>Taking totality home.</h2>
+      <h2>Take Totality Home.</h2>
+      <p class="ceremony-tag">Ground the eclipse. Sustain the state.</p>
       <p class="lead">Beneath the eclipse you set two intentions: one for yourself, one for the planet.</p>
       <p class="lead">For two days we practice living into them. Then the festival closes the circle with a Pulse ritual in the Garden. Rings up. One breath, together.</p>
       <p class="lead">Most promises fade by Tuesday. Yours comes home on your finger.</p>
@@ -686,6 +708,29 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
           <span>One promise to yourself, witnessed by everyone in the circle and everyone watching.</span>
         </div>
       </div>
+
+      <!-- Run of show from the Aug 4 standup. Facilitator names stay off the page
+           until the flow is confirmed; the slot itself is still pencilled. -->
+      <div class="ros">
+        <p class="ros-head">The hour</p>
+        <div class="ros-row">
+          <span class="ros-t">0:00</span>
+          <div><b>Welcome and intentions</b><span>The founders set the container and name the transition out of the festival.</span></div>
+        </div>
+        <div class="ros-row">
+          <span class="ros-t">0:10</span>
+          <div><b>Guided meditation</b><span>Thirty minutes of embodied practice to settle the nervous system and walk back through the week you just had.</span></div>
+        </div>
+        <div class="ros-row">
+          <span class="ros-t">0:40</span>
+          <div><b>The Pulse moment</b><span>One vibration returns the whole room to the present at the same second. Then you turn to the person beside you and ground them too.</span></div>
+        </div>
+        <div class="ros-row">
+          <span class="ros-t">0:55</span>
+          <div><b>Closing</b><span>A last look forward, carrying the frequency into ordinary days.</span></div>
+        </div>
+      </div>
+      <p class="ros-note">A technology-free container. Phones go silent, or on autopilot, at the door.</p>
 
       <div class="wclock" id="wclock" aria-label="What time the closing circle falls around the world"></div>
       <p class="ritual-close">Then the ring carries it. Every pulse after is the circle, checking in.</p>
@@ -763,7 +808,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     </div>
     <p class="outro">When it pulses, everyone returns at once.</p>
     <h2 style="margin-top:3rem">Two ways to get your ring</h2>
-    <div class="chip-row"><span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 off</span></div>
+    <div class="chip-row"><span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 gift</span></div>
     <div class="paths-grid" id="paths">
       <div class="path gate" data-path="gate">
         <div class="path-body">
@@ -772,10 +817,13 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
           <ul class="path-list">
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Reserve now, collect at the gate</li>
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Wear it for totality on August 12</li>
-            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 off, applied automatically</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 gift, applied automatically</li>
           </ul>
           <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Reserve my ring</a>
-          <p class="note">No restock on the peninsula.</p>
+          <div class="meter" data-left="200" data-total="2000">
+            <div class="meter-track"><span class="meter-fill"></span></div>
+            <p class="meter-label"><b>200</b> rings remaining on the peninsula</p>
+          </div>
         </div>
       </div>
       <div class="path" data-path="home">
@@ -783,17 +831,20 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
           <span class="path-badge">Free 2-day delivery</span>
           <h3>Pulse at home</h3>
           <ul class="path-list">
-            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered free, second day</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Free express delivery, a $45 gift</li>
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Order by August 7 to wear it live</li>
-            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 off, applied automatically</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 gift, applied automatically</li>
           </ul>
           <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Ship my ring</a>
-          <p class="note">After August 7 it arrives as your integration companion.</p>
+          <div class="meter" data-left="1200" data-total="1500">
+            <div class="meter-track"><span class="meter-fill"></span></div>
+            <p class="meter-label"><b>1,200</b> rings remaining in this release</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="cta-row">
-      <p class="batch">Rings remaining in this release: <b id="rings-left">1,482</b><!-- TODO (dev owner TBD): wire to live inventory count -->. Ordering closes October 1.</p>
+      <p class="batch"><!-- TODO (dev owner TBD): wire the two card meters to the live inventory count -->Ordering closes October 1.</p>
     </div>
   </div>
 </section>
@@ -804,7 +855,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
       <div class="ccard gift">
         <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="9" rx="1.5"/><path d="M12 10v9M4 10h16"/><path d="M12 10c-1.2-3.2-5.2-4-5.2-1.4S12 10 12 10Zm0 0c1.2-3.2 5.2-4 5.2-1.4S12 10 12 10Z"/></svg>
         <h2>Pulse together</h2>
-        <p>Send your code to whoever should be in the silence with you. Free express shipping, a $45 value, so their ring lands before August 12.</p>
+        <p>Send your code to whoever should be in the silence with you. Free express shipping, a $45 gift, so their ring lands before August 12.</p>
         <div class="value">
           <!-- TODO (dev owner TBD): replace with the impact.com advocate enrollment URL for the Pulse referral program -->
           <a class="btn-outline" href="https://pulsemindfulness.com/referral">Get my referral code</a>
@@ -859,7 +910,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 
 <!-- STICKY MOBILE BAR -->
 <div class="sticky-bar" id="sticky">
-  <span class="off"><b>$100 off</b> · Eclipse offer</span>
+  <span class="off"><b>$100 gift</b> · Eclipse offer</span>
   <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
 </div>
 
@@ -1003,9 +1054,13 @@ function twoLines(el,a,b){
 }
 const now=Date.now();
 if(now>EXPRESS){
+  /* Past the express cutoff the promise changes: it lands after totality,
+     so the second bullet carries the integration reframe. */
   const home=document.querySelector('[data-path="home"]');
-  home.querySelector('p').textContent='Yours arrives as your integration companion.';
-  home.querySelector('.note').textContent='Your intention is set at the closing circle. The ring meets you at home and carries it forward.';
+  if(home){
+    const li=home.querySelectorAll('.path-list li');
+    if(li[1])li[1].lastChild.textContent='Yours arrives as your integration companion';
+  }
 }
 if(now>TOTALITY){
   twoLines(document.querySelector('.hero h1'),'Totality passed.','Presence remains.');
@@ -1027,6 +1082,21 @@ if(now>CEREMONY){
   document.querySelector('.offer h2').textContent='Your ring finds you at home';
 }
 
+/* Release meters: full when they come into view, then they drain to what is left.
+   TODO (dev owner TBD): data-left/data-total come from live inventory. */
+document.querySelectorAll('.meter').forEach(function(m){
+  const left=+m.dataset.left, total=+m.dataset.total;
+  const pct=Math.max(3,Math.min(100,Math.round(left/total*1000)/10));
+  const fill=m.querySelector('.meter-fill');
+  if(pct<=25)m.classList.add('scarce');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){fill.style.width=pct+'%';return}
+  new IntersectionObserver(function(en,obs){
+    if(!en[0].isIntersecting)return;
+    obs.disconnect();
+    setTimeout(function(){fill.style.width=pct+'%'},260);
+  },{threshold:.6}).observe(m);
+});
+
 /* World map — one pulse from Iceland to five hundred wearers */
 const wm=document.getElementById('worldmap');
 if(wm&&typeof WORLD_DOTS!=='undefined'){
@@ -1045,8 +1115,10 @@ if(wm&&typeof WORLD_DOTS!=='undefined'){
   const wmReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let wmW=0,wmH=0,wmRun=false,wmBase=null;
   function wmSize(){
-    const r=wm.getBoundingClientRect(), dpr=Math.min(1.5,devicePixelRatio||1);
-    wmW=r.width; wmH=r.width/2;
+    /* offsetWidth, not the client rect: the journey scales this canvas as it
+       settles and a transformed rect would feed that scale back into the raster. */
+    const dpr=Math.min(1.5,devicePixelRatio||1);
+    wmW=wm.offsetWidth||wm.getBoundingClientRect().width; wmH=wmW/2;
     wm.width=Math.round(wmW*dpr); wm.height=Math.round(wmH*dpr);
     wctx.setTransform(dpr,0,0,dpr,0,0);
     wmBase=document.createElement('canvas');
@@ -1319,17 +1391,47 @@ if(jSec&&wm){
   const lerp=(a,b,t)=>a+(b-a)*t;
   const easeIO=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
   const jAerial=jSec.querySelector('.j-aerial'), jTrod2=jSec.querySelector('.j-trod2');
+  /* The dotted grid only carries land between 4% and 80% of the canvas height, so
+     a centred canvas leaves a dead band top and bottom. As the zoom-out settles we
+     frame the land band instead: the world rises toward the top of the frame and
+     the closing line drops into the room it leaves behind. */
+  const BAND_TOP=0.04, BAND_BOT=0.80;
+  function frameWorld(s){
+    const h0=(wm.offsetWidth||wm.getBoundingClientRect().width)/2;
+    const sc=lerp(1,1.10,s), h=h0*sc, vh=innerHeight;
+    /* Frame land + closing line as one stack, centred and biased up. A fixed top
+       anchor reads well at 1440 and dumps half a phone screen of void at 390,
+       because the map is 2:1 and a phone frame is not. */
+    const bandH=(BAND_BOT-BAND_TOP)*h;
+    const fs=Math.min(Math.max(33.6,innerWidth*0.06),67.2);
+    const lineH=fs*1.25, gap=vh*0.09;
+    const top=Math.max(vh*0.06,(vh-(bandH+gap+lineH))/2-vh*0.06);
+    const centred=vh/2-h/2;
+    const dy=(top-(centred+BAND_TOP*h))*s;
+    wm.style.transform='translate(-50%,calc(-50% + '+dy.toFixed(1)+'px)) scale('+sc.toFixed(4)+')';
+    const bandBottom=centred+dy+BAND_BOT*h;
+    const lineHome=vh/2-Math.min(innerWidth*0.034,39);
+    return ((bandBottom+gap+lineH/2)-lineHome)*s;
+  }
   function jTick(){
     if(jReduced){
       jZoom.style.display='none'; jAerial.style.display='none'; jTrod2.style.display='none';
       wm.style.opacity=1;
-      jLines.forEach(function(el,i){el.style.opacity=(i===3?1:0);});
+      const d=frameWorld(1);
+      jLines.forEach(function(el,i){
+        el.style.opacity=(i===2?1:0);
+        if(i===2)el.style.transform='translateY(calc(-50% + '+d.toFixed(1)+'px))';
+      });
       return;
     }
     const r=jSec.getBoundingClientRect();
     if(r.bottom<-80||r.top>innerHeight+80) return;
     const p=clamp01(-r.top/(r.height-innerHeight));
     window.__jp=p;
+    /* Settle the world first: the hand cluster reads the map rect below, so it has
+       to be the framed rect or the ring lands where the map used to be. */
+    const settle=easeIO(clamp01((p-.72)/.20));
+    const lineDrop=frameWorld(settle);
     /* A: the Circle of Tröð from above, diving toward the water altar — altar glides to center.
        The altar sits at (50.5%, 40%) of the image FILE; account for object-fit:cover crop. */
     const aQ=clamp01(p/.185);
@@ -1371,12 +1473,15 @@ if(jSec&&wm){
     /* D: zoom out — the world appears, the wave lights the nodes */
     wm.style.opacity=clamp01((p-.68)/.16).toFixed(3);
     /* E: one line at a time — the last one lands on the whole world */
-    const WIN=[[.03,.11,.24,.32],[.40,.50,.61,.69],[.74,.84,9,9]];
+    /* the closing line waits for the world to finish framing, so it never
+       reveals across the orb while the orb is still large */
+    const WIN=[[.03,.11,.24,.32],[.40,.50,.61,.69],[.82,.90,9,9]];
     jLines.forEach(function(el,i){
       const w=WIN[i];
       const o=clamp01((p-w[0])/(w[1]-w[0])) * (w[2]>1?1:(1-clamp01((p-w[2])/(w[3]-w[2]))));
       el.style.opacity=o.toFixed(3);
-      el.style.transform='translateY('+(-50+ (1-o)*2.2).toFixed(2)+'%)';
+      const drop=(i===2?lineDrop:0);
+      el.style.transform='translateY(calc('+(-50+ (1-o)*2.2).toFixed(2)+'% + '+drop.toFixed(1)+'px))';
     });
   }
   onScrollFrame(jTick);
