@@ -135,10 +135,11 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .frame{border-radius:18px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(240,246,249,.12);position:relative}
 
 /* break autopilot — text band under the invite */
-.autopilot{position:relative;min-height:min(100vh,860px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:clamp(3rem,9vh,6rem);overflow:hidden;isolation:isolate;text-align:center}
+.autopilot{position:relative;min-height:min(100svh,900px);display:flex;align-items:center;justify-content:center;padding:clamp(3rem,7vh,5rem) 0;overflow:hidden;isolation:isolate;text-align:center}
 .auto-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2;transform:scale(1.14);will-change:transform}
 .auto-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--volcanic) 0,rgba(23,23,29,.35) 18%,rgba(11,10,22,.32) 46%,rgba(11,10,22,.86) 72%,var(--volcanic) 97%)}
-.auto-inner{position:relative;z-index:1}
+.auto-inner{position:relative;z-index:1;width:min(760px,92%)}
+.autopilot .moment-stats{margin-top:clamp(1.5rem,4vh,2.4rem);border-top:1px solid rgba(240,246,249,.16);padding-top:clamp(1rem,2.6vh,1.5rem)}
 .auto-lock{display:flex;flex-direction:column;align-items:center;gap:.35rem}
 .auto-over{font-size:clamp(.95rem,1.9vw,1.15rem);color:rgba(240,246,249,.72);margin-bottom:1.15rem;letter-spacing:.01em}
 .lock-a{font-size:clamp(.95rem,2.4vw,1.35rem);font-weight:300;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:rgba(240,246,249,.9);text-shadow:0 2px 22px rgba(0,0,0,.9)}
@@ -206,10 +207,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 }
 
 /* silence — the wordmark over the eclipse */
-.silence{position:relative;margin:2.6rem auto 0;max-width:820px;aspect-ratio:3/2;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;isolation:isolate}
-.silence-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:-2}
-.silence-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,7,11,.10) 0%,rgba(7,7,11,.10) 46%,rgba(7,7,11,.66) 72%,rgba(7,7,11,.88) 100%)}
-.silence-mark{text-align:center;line-height:1;position:absolute;left:0;right:0;bottom:7%}
+.silence-mark{text-align:center;line-height:1;margin-top:clamp(1.6rem,4vh,2.6rem)}
 .sm-top{display:block;font-size:clamp(.62rem,1.5vw,.82rem);letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:rgba(240,246,249,.8);font-weight:500;margin-bottom:.55em}
 .sm-main{display:block;font-size:clamp(2.4rem,8vw,5rem);font-weight:300;letter-spacing:.16em;text-indent:.16em;color:var(--glacier);text-shadow:0 2px 40px rgba(0,0,0,.75)}
 .sm-rule{display:block;width:clamp(70px,16vw,130px);height:1px;margin:.85em auto .7em;background:linear-gradient(90deg,transparent,rgba(251,205,102,.85),transparent)}
@@ -391,9 +389,20 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
   <div class="wrap auto-inner">
     <p class="auto-over">Thousands of hands united by one pulse.</p>
     <p class="auto-lock">
-      <span class="lock-a">Break autopilot</span>
-      <span class="lock-b">Become present.</span>
+      <span class="lock-a">Breaking autopilot</span>
+      <span class="lock-b">Becoming present.</span>
     </p>
+    <p class="silence-mark">
+      <span class="sm-top">Two minutes of</span>
+      <span class="sm-main">Silence</span>
+      <span class="sm-rule" aria-hidden="true"></span>
+      <span class="sm-sub">together</span>
+    </p>
+    <div class="moment-stats">
+      <div><b>Thousands</b><span>of hands</span></div>
+      <div><b>Two minutes</b><span>of silence</span></div>
+      <div><b>One</b><span>shared intention</span></div>
+    </div>
   </div>
 </section>
 
@@ -436,22 +445,6 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
       </p>
     </div>
 
-    <div class="silence" role="img" aria-label="Two minutes of silence, over the total eclipse">
-      <img decoding="async" class="silence-bg" src="assets/silence-eclipse.jpg" alt="" width="1500" height="1000" loading="lazy">
-      <div class="silence-veil" aria-hidden="true"></div>
-      <p class="silence-mark">
-        <span class="sm-top">Two minutes of</span>
-        <span class="sm-main">Silence</span>
-        <span class="sm-rule" aria-hidden="true"></span>
-        <span class="sm-sub">together</span>
-      </p>
-    </div>
-
-    <div class="moment-stats">
-      <div><b>Thousands</b><span>of hands</span></div>
-      <div><b>Two minutes</b><span>of silence</span></div>
-      <div><b>One</b><span>shared intention</span></div>
-    </div>
   </div>
 </section>
 
