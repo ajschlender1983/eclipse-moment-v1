@@ -64,21 +64,31 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* countdown strip */
 .strip{position:relative;border-top:1px solid rgba(251,205,102,.22);background:linear-gradient(180deg,rgba(13,16,48,.94),rgba(11,10,22,.97));overflow:hidden}
-.strip-inner{position:relative;width:min(1180px,94%);margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,4vw,3rem);padding:1.5rem 0 1.6rem;text-align:center}
-#stripice{width:clamp(96px,13vw,168px);aspect-ratio:1.42;display:block;opacity:.95}
-.strip-kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:700}
-.strip-clock{display:flex;justify-content:center;gap:clamp(.5rem,2vw,1.15rem);margin:.5rem 0 .45rem}
-.strip-clock div{min-width:3.1rem}
-.strip-clock b{display:block;font-size:clamp(1.5rem,3.6vw,2.3rem);font-weight:700;color:var(--solar);font-variant-numeric:tabular-nums;line-height:1}
-.strip-clock i{display:block;font-style:normal;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,246,249,.5);margin-top:.3rem}
-.strip-where{font-size:.74rem;letter-spacing:.06em;color:var(--dim)}
-.strip-zones{display:grid;grid-template-columns:repeat(2,auto);gap:.3rem 1.15rem;text-align:left}
-.strip-zones div{font-size:.72rem;color:rgba(240,246,249,.62);white-space:nowrap;font-variant-numeric:tabular-nums}
-.strip-zones b{color:var(--glacier);font-weight:700}
-@media (max-width:880px){
-  .strip-inner{grid-template-columns:1fr;gap:.9rem;padding:1.2rem 0 1.3rem}
-  #stripice{margin:0 auto;width:88px}
-  .strip-zones{grid-template-columns:repeat(2,auto);justify-content:center;text-align:center}
+#stripdots{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.strip-inner{position:relative;z-index:1;width:min(1180px,94%);margin:0 auto;display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:clamp(1rem,2.6vw,2.1rem);padding:1.25rem 0 1.35rem;text-align:left}
+.strip-mid{justify-self:start}
+#stripice{width:clamp(96px,12vw,158px);aspect-ratio:1.42;display:block;opacity:.95;justify-self:start}
+.strip-kicker{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.strip-clock{display:flex;gap:clamp(.45rem,1.5vw,.9rem);margin:.4rem 0 .35rem}
+.strip-clock div{min-width:2.9rem}
+.strip-clock b{display:block;font-size:clamp(1.45rem,3.2vw,2.15rem);font-weight:700;color:var(--solar);font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 0 22px rgba(251,205,102,.35)}
+.strip-clock i{display:block;font-style:normal;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,246,249,.45);margin-top:.28rem}
+.strip-where{font-size:.72rem;letter-spacing:.05em;color:var(--dim)}
+.strip-zones{justify-self:end;display:grid;grid-template-columns:repeat(3,auto);gap:.34rem 1.5rem}
+.strip-zones div{display:flex;align-items:baseline;gap:.4rem;font-size:.71rem;color:rgba(251,205,102,.62);white-space:nowrap;font-variant-numeric:tabular-nums}
+.strip-zones div::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--solar);opacity:.5;flex:none;transform:translateY(-1px)}
+.strip-zones b{color:var(--solar);font-weight:700;letter-spacing:.02em}
+@media (max-width:980px){
+  .strip-zones{grid-template-columns:repeat(2,auto);gap:.3rem 1.1rem}
+}
+@media (max-width:800px){
+  .strip-inner{grid-template-columns:minmax(0,1fr) auto;gap:.85rem 1rem;padding:1.05rem 0 1.15rem}
+  #stripice{width:112px;grid-row:1;grid-column:2;justify-self:end;align-self:center}
+  .strip-zones{grid-column:1 / -1;justify-self:start;grid-template-columns:repeat(3,auto);gap:.28rem .95rem}
+}
+@media (max-width:520px){
+  .strip-zones{grid-template-columns:repeat(2,auto)}
+  .strip-clock b{font-size:1.5rem}
 }
 
 /* ---------- sections ---------- */
@@ -359,12 +369,13 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
   </div>
   <div class="strip">
     <div class="strip-inner" aria-live="off">
-      <canvas id="stripice" aria-hidden="true"></canvas>
+      <canvas id="stripdots" aria-hidden="true"></canvas>
       <div class="strip-mid">
         <p class="strip-kicker" id="cd-label">Countdown to totality</p>
         <div class="strip-clock" id="cd"></div>
         <p class="strip-where">Snæfellsjökull, Iceland &middot; August 12 &middot; 17:47 UTC</p>
       </div>
+      <canvas id="stripice" aria-hidden="true"></canvas>
       <div class="strip-zones" id="zones"></div>
     </div>
   </div>
@@ -818,6 +829,49 @@ function tick(){
 }
 tick();
 
+/* rippling gold dot field behind the banner */
+(function(){
+  const c=document.getElementById('stripdots');
+  if(!c)return;
+  const x=c.getContext('2d'), strip=c.parentElement.parentElement;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,pts=[],run=false,dpr=1;
+  function build(){
+    const r=c.getBoundingClientRect();
+    if(!r.width||!r.height)return;
+    dpr=Math.min(2,devicePixelRatio||1);
+    W=r.width; H=r.height;
+    c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    const step=Math.max(15,Math.min(24,W/60));
+    pts=[];
+    for(let gy=step*.5; gy<H; gy+=step)
+      for(let gx=step*.5; gx<W; gx+=step)
+        pts.push({x:gx,y:gy,d:Math.hypot(gx-W*0.085,(gy-H*0.5)*1.35)});
+  }
+  const maxD=()=>Math.hypot(W,H*0.7);
+  function draw(t){
+    if(!W)return;
+    x.clearRect(0,0,W,H);
+    const md=maxD(), prog=((t||0)/7000)%1, front=prog*md*1.15, band=md*0.19;
+    for(const p of pts){
+      const gap=Math.abs(p.d-front);
+      const hit=Math.exp(-(gap*gap)/(2*band*band));
+      const a=0.055+hit*0.30;
+      x.fillStyle='rgba(251,205,102,'+a.toFixed(3)+')';
+      x.beginPath(); x.arc(p.x,p.y,1+hit*0.9,0,6.2832); x.fill();
+    }
+  }
+  function loop(t){ if(!run)return; draw(t); requestAnimationFrame(loop); }
+  build(); draw(0);
+  addEventListener('resize',function(){build();draw(0)},{passive:true});
+  if(!reduced&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){
+      const vis=e[0].isIntersecting;
+      if(vis&&!run){run=true;requestAnimationFrame(loop)} else if(!vis){run=false}
+    },{rootMargin:'60px'}).observe(strip);
+  }
+})();
+
 /* dotted Iceland in the banner, same gold grid as the journey */
 (function(){
   const c=document.getElementById('stripice');
@@ -828,9 +882,15 @@ tick();
     if(!w||!h)return;
     c.width=w*dpr; c.height=h*dpr; x.setTransform(dpr,0,0,dpr,0,0);
     x.clearRect(0,0,w,h);
-    const cw=w/ICE_COLS, ch=h/ICE_ROWS, r=Math.max(.7,Math.min(cw,ch)*.30);
-    x.fillStyle='rgba(251,205,102,.42)';
-    for(const d of ICE_DOTS){ x.beginPath(); x.arc((d[0]+.5)*cw,(d[1]+.5)*ch,r,0,6.2832); x.fill(); }
+    /* subsample so dot spacing stays ~2.7px whatever the canvas size */
+    const cell=w/ICE_COLS;
+    const N=Math.max(1,Math.ceil(2.7/cell));
+    const cw=cell, ch=h/ICE_ROWS, r=Math.max(.8,cell*N*0.3);
+    x.fillStyle='rgba(251,205,102,.55)';
+    for(const d of ICE_DOTS){
+      if(d[0]%N||d[1]%N)continue;
+      x.beginPath(); x.arc((d[0]+.5)*cw,(d[1]+.5)*ch,r,0,6.2832); x.fill();
+    }
     const sx=ICE_SNAEF[0]*w, sy=ICE_SNAEF[1]*h;
     const g=x.createRadialGradient(sx,sy,0,sx,sy,Math.max(9,w*.11));
     g.addColorStop(0,'rgba(255,247,224,.95)'); g.addColorStop(.42,'rgba(251,205,102,.5)'); g.addColorStop(1,'rgba(251,205,102,0)');
