@@ -136,7 +136,25 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 
 /* break autopilot — text band under the invite */
 .auto-statband{position:relative;z-index:2;background:linear-gradient(180deg,var(--midnight),#0b0a16);border-top:1px solid rgba(251,205,102,.16);padding:clamp(1.2rem,3.2vh,1.9rem) 0}
-.auto-statband .moment-stats{margin-top:0;padding-top:0;border-top:0}
+.momentgfx{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;justify-items:center;gap:clamp(1rem,5vw,3.5rem)}
+.mg{text-align:center;margin:0}
+.mg svg{display:block;margin:0 auto}
+.mg-side svg{width:clamp(52px,7vw,78px)}
+.mg-hero svg{width:clamp(92px,12vw,138px)}
+.mg figcaption{margin-top:.6rem}
+.mg figcaption b{display:block;font-size:clamp(.95rem,2.1vw,1.35rem);color:var(--solar);font-weight:700;line-height:1.1}
+.mg figcaption span{display:block;font-size:clamp(.6rem,1.1vw,.74rem);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:.15rem}
+.mg-hero figcaption b{font-size:clamp(1.15rem,2.7vw,1.7rem)}
+.mg-sweep{animation:mgSweep 9s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes mgSweep{0%{stroke-dasharray:0 120}8%{stroke-dasharray:0 120}70%{stroke-dasharray:120 0}100%{stroke-dasharray:120 0;opacity:.25}}
+.mg-r1,.mg-r2,.mg-r3{transform-origin:60px 60px;animation:mgPing 5s ease-out infinite}
+.mg-r2{animation-delay:.5s}.mg-r3{animation-delay:1s}
+@keyframes mgPing{0%{transform:scale(.55);opacity:.7}70%,100%{transform:scale(1);opacity:0}}
+@media (max-width:560px){
+  .momentgfx{grid-template-columns:1fr 1fr;gap:1.3rem .8rem}
+  .mg-hero{grid-column:1 / -1;order:-1}
+}
+@media (prefers-reduced-motion:reduce){.mg-sweep,.mg-r1,.mg-r2,.mg-r3{animation:none}.mg-sweep{stroke-dasharray:120 0}}
 .autopilot{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;justify-content:center;padding:0 0 clamp(3rem,8vh,5.5rem);overflow:hidden;isolation:isolate;text-align:center}
 .auto-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2;transform:scale(1.14);will-change:transform}
 .auto-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,10,22,.72) 0,rgba(23,23,29,.20) 14%,rgba(11,10,22,.14) 40%,rgba(11,10,22,.62) 68%,rgba(11,10,22,.92) 88%,var(--volcanic) 100%)}
@@ -209,11 +227,6 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 }
 
 /* silence — the wordmark over the eclipse */
-.silence-mark{position:absolute;left:var(--disc-x,50%);top:var(--disc-y,26%);transform:translate(-50%,-50%);z-index:1;text-align:center;line-height:1;width:max-content;max-width:92%}
-.sm-top{display:block;font-size:clamp(.5rem,1.05vw,.66rem);letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:rgba(240,246,249,.8);font-weight:500;margin-bottom:.55em}
-.sm-main{display:block;font-size:clamp(1.6rem,4.6vw,2.9rem);font-weight:300;letter-spacing:.16em;text-indent:.16em;color:var(--glacier);text-shadow:0 2px 26px rgba(0,0,0,.9)}
-.sm-rule{display:block;width:clamp(50px,10vw,86px);height:1px;margin:.85em auto .7em;background:linear-gradient(90deg,transparent,rgba(251,205,102,.85),transparent)}
-.sm-sub{display:block;font-size:clamp(.5rem,1.05vw,.64rem);letter-spacing:.46em;text-indent:.46em;text-transform:uppercase;color:var(--solar);font-weight:500}
 
 /* the moment — planetary alignment, for whoever is watching */
 .moment{position:relative;background:var(--volcanic);padding:clamp(4.5rem,10vw,8rem) 0}
@@ -387,10 +400,70 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 <!-- BREAK AUTOPILOT -->
 <div class="auto-statband">
   <div class="wrap">
-    <div class="moment-stats">
-      <div><b>Thousands</b><span>of hands</span></div>
-      <div><b>Two minutes</b><span>of silence</span></div>
-      <div><b>One</b><span>shared intention</span></div>
+    <div class="momentgfx">
+
+      <figure class="mg mg-side">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <g fill="#fbcd66">
+            <circle cx="60" cy="60" r="3.6"/>
+          </g>
+          <g fill="#fbcd66" opacity=".85">
+            <circle cx="42" cy="47" r="2.5"/><circle cx="60" cy="41" r="2.5"/><circle cx="78" cy="47" r="2.5"/>
+            <circle cx="35" cy="64" r="2.5"/><circle cx="85" cy="64" r="2.5"/>
+            <circle cx="44" cy="79" r="2.5"/><circle cx="60" cy="84" r="2.5"/><circle cx="76" cy="79" r="2.5"/>
+          </g>
+          <g fill="#fbcd66" opacity=".5">
+            <circle cx="26" cy="35" r="1.9"/><circle cx="45" cy="26" r="1.9"/><circle cx="60" cy="22" r="1.9"/><circle cx="75" cy="26" r="1.9"/><circle cx="94" cy="35" r="1.9"/>
+            <circle cx="18" cy="55" r="1.9"/><circle cx="102" cy="55" r="1.9"/>
+            <circle cx="20" cy="76" r="1.9"/><circle cx="100" cy="76" r="1.9"/>
+            <circle cx="32" cy="93" r="1.9"/><circle cx="60" cy="101" r="1.9"/><circle cx="88" cy="93" r="1.9"/>
+          </g>
+          <g fill="#fbcd66" opacity=".22">
+            <circle cx="12" cy="24" r="1.5"/><circle cx="34" cy="12" r="1.5"/><circle cx="60" cy="8" r="1.5"/><circle cx="86" cy="12" r="1.5"/><circle cx="108" cy="24" r="1.5"/>
+            <circle cx="6" cy="48" r="1.5"/><circle cx="114" cy="48" r="1.5"/>
+            <circle cx="8" cy="88" r="1.5"/><circle cx="112" cy="88" r="1.5"/>
+            <circle cx="24" cy="106" r="1.5"/><circle cx="60" cy="114" r="1.5"/><circle cx="96" cy="106" r="1.5"/>
+          </g>
+        </svg>
+        <figcaption><b>Thousands</b><span>of hands</span></figcaption>
+      </figure>
+
+      <figure class="mg mg-hero">
+        <svg viewBox="0 0 160 160" aria-hidden="true">
+          <defs>
+            <linearGradient id="mgArc" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fff7e0"/><stop offset="60%" stop-color="#fbcd66"/><stop offset="100%" stop-color="#ff8a3d"/>
+            </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="62" fill="none" stroke="rgba(251,205,102,.16)" stroke-width="1.4"/>
+          <circle cx="80" cy="80" r="52" fill="#0b0a16"/>
+          <circle class="mg-sweep" cx="80" cy="80" r="62" fill="none" stroke="url(#mgArc)" stroke-width="3.2"
+                  stroke-linecap="round" pathLength="120" stroke-dasharray="2 118" transform="rotate(-90 80 80)"/>
+          <g stroke="#fbcd66" stroke-linecap="round">
+            <line x1="80" y1="12" x2="80" y2="22" stroke-width="2.4" opacity=".9"/>
+            <line x1="148" y1="80" x2="138" y2="80" stroke-width="1.6" opacity=".45"/>
+            <line x1="80" y1="148" x2="80" y2="138" stroke-width="1.6" opacity=".45"/>
+            <line x1="12" y1="80" x2="22" y2="80" stroke-width="1.6" opacity=".45"/>
+          </g>
+          <text x="80" y="74" text-anchor="middle" fill="#f0f6f9" font-size="26" font-weight="300" letter-spacing="2">2:00</text>
+          <text x="80" y="96" text-anchor="middle" fill="#fbcd66" font-size="9" letter-spacing="4">SILENCE</text>
+        </svg>
+        <figcaption><b>Two minutes</b><span>of silence</span></figcaption>
+      </figure>
+
+      <figure class="mg mg-side">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <g fill="none" stroke="#fbcd66" stroke-width="1.4">
+            <circle class="mg-r1" cx="60" cy="60" r="20" opacity=".55"/>
+            <circle class="mg-r2" cx="60" cy="60" r="34" opacity=".34"/>
+            <circle class="mg-r3" cx="60" cy="60" r="48" opacity=".16"/>
+          </g>
+          <circle cx="60" cy="60" r="7.5" fill="#fbcd66" opacity=".25"/>
+          <circle cx="60" cy="60" r="4" fill="#fff7e0"/>
+        </svg>
+        <figcaption><b>One</b><span>shared intention</span></figcaption>
+      </figure>
+
     </div>
   </div>
 </div>
@@ -398,12 +471,6 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 <section class="autopilot">
   <img decoding="async" class="auto-bg" src="assets/autopilot-hand.jpg" alt="A hand wearing the gold Pulse ring raised toward a total eclipse above an Icelandic glacier valley" width="1152" height="2048">
   <div class="auto-veil" aria-hidden="true"></div>
-  <p class="silence-mark" id="silenceMark">
-    <span class="sm-top">Two minutes of</span>
-    <span class="sm-main">Silence</span>
-    <span class="sm-rule" aria-hidden="true"></span>
-    <span class="sm-sub">together</span>
-  </p>
   <div class="wrap auto-inner">
     <p class="auto-over">Thousands of hands united by one pulse.</p>
     <p class="auto-lock">
@@ -1155,30 +1222,6 @@ if(iceC&&typeof ICE_DOTS!=='undefined'){
     else if(!vis){iceRun=false}
   },{rootMargin:'80px'}).observe(iceC);
 }
-
-/* Pin the Silence wordmark to the eclipse disc through the cover-crop + scale */
-(function(){
-  const sec=document.querySelector('.autopilot'), img=document.querySelector('.auto-bg');
-  const mark=document.getElementById('silenceMark');
-  if(!sec||!img||!mark)return;
-  const FX=0.518, FY=0.181;      /* disc centre as a fraction of the source image */
-  const OBJ_Y=0.42, ZOOM=1.14;   /* must match .auto-bg object-position / transform */
-  function place(){
-    const W=sec.clientWidth, H=sec.clientHeight;
-    const nw=img.naturalWidth||558, nh=img.naturalHeight||1000;
-    if(!W||!H||!nw)return;
-    const sc=Math.max(W/nw,H/nh);
-    const rw=nw*sc, rh=nh*sc;
-    const ox=(W-rw)*0.5, oy=(H-rh)*OBJ_Y;
-    let x=ox+FX*rw, y=oy+FY*rh;
-    x=(x-W/2)*ZOOM+W/2;          /* the element is scaled about its centre */
-    y=(y-H/2)*ZOOM+H/2;
-    mark.style.setProperty('--disc-x',x.toFixed(1)+'px');
-    mark.style.setProperty('--disc-y',y.toFixed(1)+'px');
-  }
-  if(img.complete)place(); else img.addEventListener('load',place);
-  addEventListener('resize',place,{passive:true});
-})();
 
 /* World-clock banner: what o'clock totality is, wherever you are */
 (function(){
