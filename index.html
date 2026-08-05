@@ -142,7 +142,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .mg{text-align:center;margin:0}
 .mg svg{display:block;margin:0 auto}
 .mg-side svg{width:clamp(44px,5.4vw,62px)}
-.mg-hero svg{width:clamp(104px,13vw,152px)}
+.mg-hero svg{width:var(--dial-size,clamp(104px,13vw,152px))}
 .mg figcaption{margin-top:.5rem}
 .mg-hero figcaption{margin-top:1.15rem}
 .mg-side figcaption{width:max-content;max-width:9.5rem;margin-left:auto;margin-right:auto}
@@ -1232,7 +1232,9 @@ if(iceC&&typeof ICE_DOTS!=='undefined'){
   const sec=document.querySelector('.autopilot'), img=document.querySelector('.auto-bg');
   const dial=document.getElementById('silenceDial');
   if(!sec||!img||!dial)return;
-  const FX=0.518, FY=0.181, OBJ_Y=0.20, ZOOM=1.06;
+  const FX=0.5218, FY=0.1677, FR=0.1237;   /* disc centre + radius as fractions of the source image */
+  const OBJ_Y=0.20, ZOOM=1.06;
+  const RING_FRAC=62/160;                  /* the dial ring's radius within its own viewBox */
   function place(){
     const W=sec.clientWidth, H=sec.clientHeight;
     const nw=img.naturalWidth||558, nh=img.naturalHeight||1000;
@@ -1242,6 +1244,10 @@ if(iceC&&typeof ICE_DOTS!=='undefined'){
     x=(x-W/2)*ZOOM+W/2; y=(y-H/2)*ZOOM+H/2;
     dial.style.setProperty('--disc-x',x.toFixed(1)+'px');
     dial.style.setProperty('--disc-y',y.toFixed(1)+'px');
+    /* scale the whole dial so its ring sits on the corona, whatever the crop */
+    const discR=FR*rw*ZOOM;          /* disc radius on screen */
+    const ringR=discR*1.24;          /* sit just outside the corona, not on it */
+    dial.style.setProperty('--dial-size',(ringR/RING_FRAC).toFixed(1)+'px');
   }
   if(img.complete)place(); else img.addEventListener('load',place);
   addEventListener('resize',place,{passive:true});
