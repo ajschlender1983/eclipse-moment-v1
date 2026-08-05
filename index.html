@@ -328,8 +328,16 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .j-zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform,opacity}
 .j-rings{width:150vmin;height:150vmin;flex:none;opacity:0;will-change:opacity}
 .j-photo{position:absolute;left:50%;top:50%;width:46vmin;height:46vmin;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden}
-.j-photo img{width:100%;height:100%;object-fit:cover}
+.j-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.2) translateY(7.5%);filter:brightness(var(--jb,1));will-change:filter}
 .j-glow{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,247,224,.9),rgba(251,205,102,.55) 55%,rgba(251,205,102,.25) 100%);opacity:0;will-change:opacity}
+/* rings launch from wherever the orb is and run past the edges of the frame.
+   The map canvas used to draw these and clipped them at its own bounds. */
+.j-ripple{position:absolute;left:50%;top:50%;width:0;height:0;z-index:2;pointer-events:none;opacity:0;will-change:opacity}
+.j-ripple span{position:absolute;left:0;top:0;width:200vmax;height:200vmax;margin:-100vmax 0 0 -100vmax;border-radius:50%;border:1px solid rgba(251,205,102,.6);transform:scale(0);opacity:0;animation:jRip 8s linear infinite}
+.j-ripple span:nth-child(2){animation-delay:2.667s}
+.j-ripple span:nth-child(3){animation-delay:5.333s}
+@keyframes jRip{0%{transform:scale(0);opacity:0}5%{opacity:.6}100%{transform:scale(.62);opacity:0}}
+@media (prefers-reduced-motion:reduce){.j-ripple{display:none}}
 .wclock{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem 0;margin:1.6rem 0 1.4rem;padding-top:1.3rem;border-top:1px solid rgba(240,246,249,.14)}
 .wc{text-align:center}
 .wc svg{width:clamp(26px,3.3vw,40px);height:auto;display:block;margin:0 auto .22rem}
@@ -338,8 +346,10 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 @media (max-width:900px){.wclock{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:520px){.wclock{grid-template-columns:repeat(3,1fr)}}
 .j-lines{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92%,760px);text-align:center;pointer-events:none;z-index:4}
-.j-lines span{display:block;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);opacity:0;font-size:clamp(2.1rem,6vw,4.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.05;text-shadow:0 3px 44px rgba(0,0,0,.92);will-change:opacity,transform}
-.j-lines span[data-l="2"]{color:var(--solar);top:calc(50% - min(3.4vw,39px));text-shadow:0 2px 12px rgba(0,0,0,.95), 0 8px 34px rgba(0,0,0,.85), 0 0 70px rgba(0,0,0,.6)}
+.j-lines span{display:block;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);opacity:0;font-size:clamp(2.1rem,6vw,4.2rem);font-weight:700;letter-spacing:-.025em;line-height:1.05;background:linear-gradient(100deg,#fff7e0,var(--solar) 42%,var(--corona));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 30px rgba(0,0,0,.85)) drop-shadow(0 1px 6px rgba(0,0,0,.7));will-change:opacity,transform}
+/* the first two lines ride high, clear of the orb they sit over */
+.j-lines span[data-l="0"],.j-lines span[data-l="1"]{top:calc(50% - 16vh)}
+.j-lines span[data-l="2"]{top:calc(50% - min(3.4vw,39px))}
 
 /* testimonials */
 .testis{position:relative;overflow:hidden;z-index:6;margin-top:0;background:radial-gradient(75% 60% at 30% 34%, rgba(73,41,145,.30), transparent 65%), radial-gradient(55% 45% at 82% 62%, rgba(244,39,137,.13), transparent 70%), linear-gradient(180deg, rgba(11,10,22,0) 0, rgba(11,10,22,.72) 14vh, #0b0a16 30vh, var(--volcanic) 100%)}
@@ -642,6 +652,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
         <circle cx="320" cy="320" r="4.5" fill="#fff7e0"/>
       </svg>
     </div>
+    <div class="j-ripple" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="j-zoom" aria-hidden="true">
       <svg class="j-rings" viewBox="0 0 600 600" fill="none">
         <g stroke="#fbcd66" stroke-width="2.2" stroke-linecap="round">
@@ -1168,13 +1179,6 @@ if(wm&&typeof WORLD_DOTS!=='undefined'){
       wctx.fill();
     }
     const ix=ICE.x*wmW, iy=ICE.y*wmH;
-    for(let k=0;k<3;k++){
-      const rp=((prog+k/3)%1);
-      const rr=rp*wmW*0.11;
-      wctx.strokeStyle='rgba(251,205,102,'+(0.5*(1-rp)).toFixed(3)+')';
-      wctx.lineWidth=1.4;
-      wctx.beginPath(); wctx.arc(ix,iy,rr,0,6.283); wctx.stroke();
-    }
     const g=wctx.createRadialGradient(ix,iy,0,ix,iy,dotR*7);
     g.addColorStop(0,'rgba(255,247,224,.95)');g.addColorStop(.4,'rgba(251,205,102,.55)');g.addColorStop(1,'rgba(251,205,102,0)');
     wctx.fillStyle=g;
@@ -1376,6 +1380,7 @@ const jSec=document.querySelector('.journey');
 if(jSec&&wm){
   const jZoom=jSec.querySelector('.j-zoom'), jRings=jSec.querySelector('.j-rings'),
         jGlow=jSec.querySelector('.j-glow'), jLines=[...jSec.querySelectorAll('.j-lines span')],
+        jRip=jSec.querySelector('.j-ripple'), jImg=jSec.querySelector('.j-photo img'),
         jReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clamp01=v=>Math.min(1,Math.max(0,v));
   const lerp=(a,b,t)=>a+(b-a)*t;
@@ -1403,9 +1408,11 @@ if(jSec&&wm){
     const lineHome=vh/2-Math.min(innerWidth*0.034,39);
     return ((bandBottom+gap+lineH/2)-lineHome)*s;
   }
+  let jRipOn=false;
   function jTick(){
     if(jReduced){
       jZoom.style.display='none'; jAerial.style.display='none'; jTrod2.style.display='none';
+      if(jRip)jRip.style.display='none';
       wm.style.opacity=1;
       const d=frameWorld(1);
       jLines.forEach(function(el,i){
@@ -1448,24 +1455,44 @@ if(jSec&&wm){
       scale=lerp(.3,1,easeIO(clamp01((p-.43)/.22)));
       zo=clamp01((p-.43)/.08);
     } else {
+      /* the shrink starts at the pivot, the travel to Iceland lags it, so the
+         orb reads as scaling into the centre of frame before it goes anywhere */
       const t=easeIO(clamp01((p-.7)/.25));
+      const tv=easeIO(clamp01((p-.80)/.155));
       scale=lerp(1,.055,t);
       const mr=wm.getBoundingClientRect();
       const icx=mr.left+.4486*mr.width, icy=mr.top+.1394*mr.height;
-      tx=lerp(0,icx-innerWidth/2,t); ty=lerp(0,icy-innerHeight/2,t);
+      tx=lerp(0,icx-innerWidth/2,tv); ty=lerp(0,icy-innerHeight/2,tv);
       zo=1-clamp01((p-.91)/.05);
     }
     jZoom.style.transform='translate('+tx.toFixed(1)+'px,'+ty.toFixed(1)+'px) scale('+scale.toFixed(4)+')';
     jZoom.style.opacity=zo.toFixed(3);
     jZoom.style.visibility=zo<.01?'hidden':'visible';
     jRings.style.opacity=clamp01((p-.58)/.09).toFixed(3);
-    jGlow.style.opacity=(clamp01((p-.44)/.12)*.9).toFixed(3);
+    /* the photograph arrives bright and settles back toward its ungraded state */
+    if(jImg)jImg.style.setProperty('--jb',lerp(1.5,1,easeIO(clamp01((p-.45)/.33))).toFixed(3));
+    jGlow.style.opacity=(clamp01((p-.44)/.12)*lerp(.72,.2,easeIO(clamp01((p-.55)/.26)))).toFixed(3);
+    /* the ripple launches at the pivot from wherever the orb is, and follows it in */
+    if(jRip){
+      jRip.style.left=(innerWidth/2+tx).toFixed(1)+'px';
+      jRip.style.top=(innerHeight/2+ty).toFixed(1)+'px';
+      jRip.style.opacity=clamp01((p-.70)/.045).toFixed(3);
+      if(p>=.70&&!jRipOn){
+        jRipOn=true;
+        jRip.querySelectorAll('span').forEach(function(el,i){
+          el.style.animation='none'; void el.offsetWidth;
+          el.style.animation=''; el.style.animationDelay=(i*2.667)+'s';
+        });
+      } else if(p<.66&&jRipOn){ jRipOn=false; }
+    }
     /* D: zoom out — the world appears, the wave lights the nodes */
     wm.style.opacity=clamp01((p-.68)/.16).toFixed(3);
     /* E: one line at a time — the last one lands on the whole world */
     /* the closing line waits for the world to finish framing, so it never
        reveals across the orb while the orb is still large */
-    const WIN=[[.03,.11,.24,.32],[.40,.50,.61,.69],[.82,.90,9,9]];
+    /* line 1 clears out before the orb grows up into it; gold type over the
+       bright side of that photograph is unreadable */
+    const WIN=[[.03,.11,.24,.32],[.40,.48,.56,.62],[.82,.90,9,9]];
     jLines.forEach(function(el,i){
       const w=WIN[i];
       const o=clamp01((p-w[0])/(w[1]-w[0])) * (w[2]>1?1:(1-clamp01((p-w[2])/(w[3]-w[2]))));
