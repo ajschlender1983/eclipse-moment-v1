@@ -6,7 +6,7 @@
 <title>Experience Totality Together · Pulse & Unify</title>
 <meta name="description" content="The world's first awareness ring. Live transmission August 12. The closing circle August 14. Set one intention and let every pulse return you to it.">
 <meta property="og:title" content="Experience Totality Together · Pulse & Unify">
-<meta property="og:description" content="Watch the eclipse ceremony live from Iceland. Set one intention. Let every gentle pulse of your ring return you to it. A $100 gift with the eclipse offer.">
+<meta property="og:description" content="Watch the eclipse ceremony live from Iceland. Set one intention. Let every gentle pulse of your ring return you to it. $100 off with VIP code ECLIPSE100VIP.">
 <meta property="og:image" content="https://ajschlender1983.github.io/eclipse-moment-v1/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -49,6 +49,38 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .cta-timer{display:inline-block;margin-left:.55rem;padding:.18rem .7rem;border-radius:999px;background:rgba(23,23,29,.22);font-size:.88rem;font-variant-numeric:tabular-nums;vertical-align:1px}
 .cta-timer:empty{display:none}
 .chip svg{flex:none}
+/* The code is NOT auto-applied at checkout, so the page has to hand it over.
+   Tap to copy, because people have to paste this into the cart themselves. */
+.codeline{font-size:.92rem;color:rgba(240,246,249,.8);letter-spacing:.01em;line-height:1.9}
+.codechip{font:inherit;font-weight:700;letter-spacing:.1em;color:var(--solar);background:rgba(251,205,102,.1);
+  border:1px dashed rgba(251,205,102,.6);border-radius:8px;padding:.26rem .6rem;margin:0 .22rem;cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease}
+.codechip:hover{background:rgba(251,205,102,.2)}
+.codechip.copied{border-style:solid;background:var(--solar);color:#221302}
+.offer .chip-row{justify-content:center}
+
+/* reserve capture */
+.modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:1.2rem;
+  background:rgba(7,7,11,.86);opacity:0;transition:opacity .22s ease}
+.modal.open{opacity:1}
+.modal[hidden]{display:none}
+.modal-card{position:relative;width:min(440px,100%);background:linear-gradient(180deg,#141327,#0d1030);
+  border:1px solid rgba(251,205,102,.3);border-radius:20px;padding:2.1rem 1.8rem 1.7rem;text-align:center;
+  box-shadow:0 30px 90px rgba(0,0,0,.6);transform:translateY(10px);transition:transform .22s ease}
+.modal.open .modal-card{transform:translateY(0)}
+.modal-card h3{font-size:1.45rem;letter-spacing:-.02em;margin-bottom:.7rem}
+.modal-card p{font-size:.94rem;color:rgba(240,246,249,.72);line-height:1.5}
+.modal-x{position:absolute;right:.7rem;top:.55rem;width:34px;height:34px;border:none;background:none;
+  color:rgba(240,246,249,.6);font-size:1.5rem;line-height:1;cursor:pointer;border-radius:50%}
+.modal-x:hover{color:var(--glacier);background:rgba(240,246,249,.08)}
+#reserve-form{display:flex;flex-direction:column;gap:.7rem;margin:1.3rem 0 .9rem}
+#reserve-form input{padding:.85rem 1rem;border-radius:12px;border:1px solid rgba(240,246,249,.24);
+  background:rgba(240,246,249,.06);color:var(--glacier);font:inherit;font-size:1rem}
+#reserve-form input::placeholder{color:rgba(240,246,249,.4)}
+#reserve-form .cta{width:100%;padding:.85rem 1rem;font-size:1rem;animation:none}
+.modal-fine{font-size:.8rem !important;color:rgba(240,246,249,.5) !important}
+.modal .thanks{display:none;margin-top:1rem;color:var(--teal);font-size:.95rem}
+.modal-err{display:none;margin-top:.7rem;color:var(--corona);font-size:.85rem}
 .icn{width:22px;height:22px;color:var(--solar);display:block;margin-bottom:.6rem}
 .beat .icn{margin:0 auto .55rem}
 
@@ -479,8 +511,8 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     </div>
     <h1>Experience Totality.</h1>
     <div class="cta-row">
-      <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
-      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 gift</span>
+      <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Get my ring</a>
+      <p class="codeline">Use exclusive VIP code <button class="codechip" type="button" data-code="ECLIPSE100VIP" aria-label="Copy the VIP code ECLIPSE100VIP">ECLIPSE100VIP</button> for $100 off</p>
     </div>
   </div>
   <div class="strip">
@@ -766,7 +798,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
       <div class="wclock" id="wclock" aria-label="What time the closing circle falls around the world"></div>
       <p class="ritual-close">Then the ring carries it. Every pulse after is the circle, checking in.</p>
 
-      <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+      <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Get my ring</a>
       <a class="watch-link" href="#rsvp">RSVP for the transmission</a>
     </div>
   </div>
@@ -839,7 +871,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
     </div>
     <p class="outro">When it pulses, everyone returns at once.</p>
     <h2 style="margin-top:3rem">Two ways to get your ring</h2>
-    <div class="chip-row"><span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00b99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eclipse offer applied · $100 gift</span></div>
+    <div class="chip-row"><p class="codeline">Use exclusive VIP code <button class="codechip" type="button" data-code="ECLIPSE100VIP" aria-label="Copy the VIP code ECLIPSE100VIP">ECLIPSE100VIP</button> for $100 off</p></div>
     <div class="paths-grid" id="paths">
       <div class="path gate" data-path="gate">
         <div class="path-body">
@@ -848,9 +880,9 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
           <ul class="path-list">
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Reserve now, collect at the gate</li>
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Wear it for totality on August 12</li>
-            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 gift, applied automatically</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 off with your VIP code</li>
           </ul>
-          <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Reserve my ring</a>
+          <a class="cta buy path-cta" data-reserve href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Reserve my ring</a>
           <div class="meter" data-left="184" data-total="2000">
             <div class="meter-track"><span class="meter-fill"></span></div>
             <p class="meter-label"><b>184</b> rings remaining</p>
@@ -864,9 +896,9 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
           <ul class="path-list">
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Free express delivery, a $45 gift</li>
             <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Order by August 7 to wear it live</li>
-            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 gift, applied automatically</li>
+            <li><svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>$100 off with your VIP code</li>
           </ul>
-          <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Ship my ring</a>
+          <a class="cta buy path-cta" href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Ship my ring</a>
           <div class="meter" data-left="1137" data-total="1500">
             <div class="meter-track"><span class="meter-fill"></span></div>
             <p class="meter-label"><b>1,137</b> rings remaining</p>
@@ -900,7 +932,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
           <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
           <button class="btn-outline" type="submit">RSVP</button>
         </form>
-        <p class="thanks" id="watch-thanks">You're in. The link and your prep notes arrive before August 12. Want the pulse with you when it happens? <a class="buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a></p>
+        <p class="thanks" id="watch-thanks">You're in. The link and your prep notes arrive before August 12. Want the pulse with you when it happens? <a class="buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Get my ring</a></p>
       </div>
     </div>
   </div>
@@ -927,7 +959,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
       <span class="lk-brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#fbcd66" stroke-width="1.2" opacity=".4"/><circle cx="13" cy="13" r="7" fill="none" stroke="#fbcd66" stroke-width="2.6"/></svg>PULSE</span>
     </div>
     <h2>Let's be present together.</h2>
-    <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+    <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Get my ring</a>
     <p class="fine">Totality over Snæfellsjökull · August 12 · 17:47 UTC</p>
   </div>
 </section>
@@ -939,8 +971,25 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 
 <!-- STICKY MOBILE BAR -->
 <div class="sticky-bar" id="sticky">
-  <span class="off"><b>$100 gift</b> · Eclipse offer</span>
-  <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100">Get my ring</a>
+  <span class="off"><b>$100 off</b> · VIP code</span>
+  <a class="cta buy" href="https://pulsemindfulness.com/?discount=ECLIPSE100VIP">Get my ring</a>
+</div>
+
+<!-- Reserve capture. The gate CTA opens this instead of jumping straight to the
+     store, so the address lands in the CRM before checkout. -->
+<div class="modal" id="reserve" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="reserve-h">
+    <button class="modal-x" type="button" id="reserve-x" aria-label="Close">&times;</button>
+    <h3 id="reserve-h">Reserve your ring</h3>
+    <p>Leave your email and we will hold one for you at the gate, with your VIP code and where to collect it.</p>
+    <form id="reserve-form" novalidate>
+      <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address" autocomplete="email">
+      <button class="cta" type="submit">Reserve my ring</button>
+    </form>
+    <p class="modal-fine">Only 184 left on the peninsula. Your VIP code is ECLIPSE100VIP.</p>
+    <p class="modal-err" id="reserve-err">That email did not look right. Try again?</p>
+    <p class="thanks" id="reserve-thanks">You are on the list. Taking you to checkout.</p>
+  </div>
 </div>
 
 <script src="assets/worldgrid.js"></script>
@@ -1565,12 +1614,114 @@ if(fv)new IntersectionObserver(function(e){
   if(e[0].isIntersecting){fv.play().catch(function(){})}else{fv.pause()}
 },{rootMargin:'100px'}).observe(fv);
 
-/* Watch-live capture: confirmation re-offers the ring.
-   TODO (dev owner TBD): point this at the ESP endpoint (Klaviyo/Mailchimp) before Aug 5. */
+/* ============================ CRM / ESP ==============================
+   TODO (dev owner TBD): set ESP.endpoint to the Klaviyo, Mailchimp or HubSpot
+   subscribe URL and ESP.listId to the Iceland list. Every address on this page
+   goes through captureEmail() so there is one place to wire, not three.
+
+   Until endpoint is set, addresses are queued in localStorage under
+   'pulse.leads' so nothing typed before launch is lost. Run
+   copy(window.__pulseLeads()) in the console to pull them out as CSV. */
+const ESP={endpoint:'', listId:'', source:'eclipse-landing'};
+
+function captureEmail(email,intent){
+  const lead={email:email,intent:intent,list:ESP.listId,source:ESP.source,at:new Date().toISOString()};
+  try{
+    const q=JSON.parse(localStorage.getItem('pulse.leads')||'[]');
+    q.push(lead); localStorage.setItem('pulse.leads',JSON.stringify(q));
+  }catch(err){}
+  if(!ESP.endpoint)return Promise.resolve({queued:true});
+  return fetch(ESP.endpoint,{
+    method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(lead)
+  }).catch(function(){ return {queued:true}; });
+}
+window.__pulseLeads=function(){
+  const q=JSON.parse(localStorage.getItem('pulse.leads')||'[]');
+  return 'email,intent,at\n'+q.map(function(l){return [l.email,l.intent,l.at].join(',')}).join('\n');
+};
+const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/* Watch-live capture: confirmation re-offers the ring. */
 document.getElementById('watch-form').addEventListener('submit',e=>{
   e.preventDefault();
+  const email=(e.target.email.value||'').trim();
+  if(!EMAIL_RE.test(email)){e.target.email.focus();return}
+  captureEmail(email,'rsvp-broadcast');
   e.target.style.display='none';
   document.getElementById('watch-thanks').style.display='block';
+});
+
+/* Reserve capture: the gate CTA opens a modal, the address lands in the CRM,
+   then we hand off to checkout with the VIP code in the URL. */
+(function(){
+  const modal=document.getElementById('reserve');
+  if(!modal)return;
+  const form=document.getElementById('reserve-form'),
+        thanks=document.getElementById('reserve-thanks'),
+        err=document.getElementById('reserve-err'),
+        input=form.querySelector('input');
+  let returnTo=null, storeHref='';
+
+  function open(href,trigger){
+    storeHref=href; returnTo=trigger||null;
+    modal.hidden=false;
+    requestAnimationFrame(function(){modal.classList.add('open')});
+    document.body.style.overflow='hidden';
+    setTimeout(function(){input.focus()},80);
+  }
+  function close(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+    setTimeout(function(){modal.hidden=true},220);
+    if(returnTo)returnTo.focus();
+  }
+  document.getElementById('reserve-x').addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close()});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close()});
+
+  /* keep focus inside the dialog while it is open */
+  modal.addEventListener('keydown',function(e){
+    if(e.key!=='Tab')return;
+    const f=modal.querySelectorAll('button,input');
+    const first=f[0], last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const email=(input.value||'').trim();
+    if(!EMAIL_RE.test(email)){err.style.display='block';input.focus();return}
+    err.style.display='none';
+    captureEmail(email,'reserve-gate');
+    form.style.display='none';
+    thanks.style.display='block';
+    setTimeout(function(){ if(storeHref)location.href=storeHref; },1100);
+  });
+
+  document.querySelectorAll('[data-reserve]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();open(a.href,a)});
+  });
+})();
+
+/* Tap the code to copy it, since nobody wants to retype ECLIPSE100VIP */
+document.querySelectorAll('.codechip').forEach(function(b){
+  b.addEventListener('click',function(){
+    const code=b.dataset.code, done=function(){
+      const was=b.textContent;
+      b.classList.add('copied'); b.textContent='Copied';
+      setTimeout(function(){b.classList.remove('copied');b.textContent=was},1400);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(code).then(done).catch(done);
+    } else {
+      const t=document.createElement('textarea');
+      t.value=code; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select();
+      try{document.execCommand('copy')}catch(e){}
+      document.body.removeChild(t); done();
+    }
+  });
 });
 </script>
 </body>
