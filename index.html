@@ -112,6 +112,10 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .badge .dot{width:9px;height:9px;border-radius:50%;background:var(--aurora);box-shadow:0 0 0 0 rgba(244,39,137,.6);animation:live 1.8s infinite}
 @keyframes live{0%{box-shadow:0 0 0 0 rgba(244,39,137,.55)}70%{box-shadow:0 0 0 11px rgba(244,39,137,0)}100%{box-shadow:0 0 0 0 rgba(244,39,137,0)}}
 .broadcast p{margin-top:1.1rem}
+.broadcast .lead.accent{color:var(--solar);font-weight:500;margin-top:1.5rem}
+.bc-shot{align-self:stretch;min-height:100%}
+.bc-shot img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:860px){.bc-shot{min-height:0}.bc-shot img{aspect-ratio:16/10}}
 .watch-link{display:inline-block;margin-top:1.6rem;color:var(--glacier);opacity:.75;font-size:.95rem;text-decoration:underline;text-underline-offset:4px;transition:opacity .2s}
 .watch-link:hover{opacity:1}
 
@@ -135,26 +139,30 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;letter-spacing:-.015em;lin
 .frame{border-radius:18px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(240,246,249,.12);position:relative}
 
 /* break autopilot — text band under the invite */
-.auto-statband{position:relative;z-index:2;background:linear-gradient(180deg,var(--midnight),#0b0a16);border-top:1px solid rgba(251,205,102,.16);padding:clamp(1.2rem,3.2vh,1.9rem) 0}
+.auto-statband{position:relative;z-index:2;overflow:hidden;background:linear-gradient(180deg,rgba(11,10,22,.97),rgba(13,16,48,.94) 42%,#0b0a16);padding:clamp(1.4rem,3.6vh,2.2rem) 0 clamp(1.6rem,4vh,2.4rem)}
+#banddots{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.auto-statband .wrap{position:relative;z-index:1}
 .momentgfx{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;justify-items:center;gap:clamp(1rem,5vw,3.5rem)}
 .mg{text-align:center;margin:0}
 .mg svg{display:block;margin:0 auto}
-.mg-side svg{width:clamp(52px,7vw,78px)}
-.mg-hero svg{width:clamp(92px,12vw,138px)}
-.mg figcaption{margin-top:.6rem}
-.mg figcaption b{display:block;font-size:clamp(.95rem,2.1vw,1.35rem);color:var(--solar);font-weight:700;line-height:1.1}
-.mg figcaption span{display:block;font-size:clamp(.6rem,1.1vw,.74rem);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:.15rem}
-.mg-hero figcaption b{font-size:clamp(1.15rem,2.7vw,1.7rem)}
+.mg-side svg{width:clamp(44px,5.4vw,62px)}
+.mg-hero svg{width:clamp(104px,13vw,152px)}
+.mg figcaption{margin-top:.55rem}
+.mg figcaption b{display:block;font-size:clamp(1rem,2vw,1.3rem);color:var(--solar);font-weight:700;line-height:1;letter-spacing:-.01em;text-shadow:0 0 22px rgba(251,205,102,.28)}
+.mg figcaption span{display:block;font-size:clamp(.5rem,.85vw,.6rem);letter-spacing:.2em;text-transform:uppercase;color:rgba(240,246,249,.46);margin-top:.34rem}
+.mg-hero figcaption b{font-size:clamp(1.6rem,3.6vw,2.5rem);text-shadow:0 0 30px rgba(251,205,102,.4)}
+.mg-hero figcaption span{font-size:clamp(.56rem,.95vw,.68rem);color:rgba(251,205,102,.72);margin-top:.4rem}
+.mg-side{opacity:.9}
 .mg-sweep{animation:mgSweep 9s cubic-bezier(.4,0,.2,1) infinite}
 @keyframes mgSweep{0%{stroke-dasharray:0 120}8%{stroke-dasharray:0 120}70%{stroke-dasharray:120 0}100%{stroke-dasharray:120 0;opacity:.25}}
-.mg-r1,.mg-r2,.mg-r3{transform-origin:60px 60px;animation:mgPing 5s ease-out infinite}
-.mg-r2{animation-delay:.5s}.mg-r3{animation-delay:1s}
+.mg-r1,.mg-r2{transform-origin:60px 60px;animation:mgPing 5s ease-out infinite}
+.mg-r2{animation-delay:1.2s}
 @keyframes mgPing{0%{transform:scale(.55);opacity:.7}70%,100%{transform:scale(1);opacity:0}}
 @media (max-width:560px){
   .momentgfx{grid-template-columns:1fr 1fr;gap:1.3rem .8rem}
   .mg-hero{grid-column:1 / -1;order:-1}
 }
-@media (prefers-reduced-motion:reduce){.mg-sweep,.mg-r1,.mg-r2,.mg-r3{animation:none}.mg-sweep{stroke-dasharray:120 0}}
+@media (prefers-reduced-motion:reduce){.mg-sweep,.mg-r1,.mg-r2{animation:none}.mg-sweep{stroke-dasharray:120 0}.mg-r1,.mg-r2{opacity:0}}
 .autopilot{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;justify-content:center;padding:0 0 clamp(3rem,8vh,5.5rem);overflow:hidden;isolation:isolate;text-align:center}
 .auto-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2;transform:scale(1.14);will-change:transform}
 .auto-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,10,22,.72) 0,rgba(23,23,29,.20) 14%,rgba(11,10,22,.14) 40%,rgba(11,10,22,.62) 68%,rgba(11,10,22,.92) 88%,var(--volcanic) 100%)}
@@ -399,6 +407,7 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 <!-- FOUNDER INVITATION (placeholder thumbnail — video pending) -->
 <!-- BREAK AUTOPILOT -->
 <div class="auto-statband">
+  <canvas id="banddots" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="momentgfx">
 
@@ -454,9 +463,11 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
       <figure class="mg mg-side">
         <svg viewBox="0 0 120 120" aria-hidden="true">
           <g fill="none" stroke="#fbcd66" stroke-width="1.4">
-            <circle class="mg-r1" cx="60" cy="60" r="20" opacity=".55"/>
-            <circle class="mg-r2" cx="60" cy="60" r="34" opacity=".34"/>
-            <circle class="mg-r3" cx="60" cy="60" r="48" opacity=".16"/>
+            <circle cx="60" cy="60" r="22" opacity=".5"/>
+            <circle cx="60" cy="60" r="36" opacity=".26"/>
+            <circle cx="60" cy="60" r="50" opacity=".12"/>
+            <circle class="mg-r1" cx="60" cy="60" r="22" opacity=".55"/>
+            <circle class="mg-r2" cx="60" cy="60" r="36" opacity=".4"/>
           </g>
           <circle cx="60" cy="60" r="7.5" fill="#fbcd66" opacity=".25"/>
           <circle cx="60" cy="60" r="4" fill="#fff7e0"/>
@@ -524,16 +535,16 @@ footer .partner{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;m
 
 <section class="broadcast block">
   <div class="wrap">
+    <div class="frame bc-shot">
+      <img decoding="async" src="assets/ceremony-circle.jpg" alt="Rings of people seated around a flowered water altar in a green Icelandic meadow, seen from above" width="1400" height="836" loading="lazy">
+    </div>
     <div>
-      <span class="badge"><span class="dot"></span>Live transmission</span>
+      <span class="badge"><span class="dot"></span>Live from Snæfellsjökull &middot; August 12</span>
       <h2>Join us, wherever you are.</h2>
-      <p class="lead">August 12. We transmit live from the Circle of Tröð: fifteen rings of people around one water altar, beneath Snæfellsjökull.</p>
-      <p class="lead">Unify co-founder Patrick Kronfli holds the circle, on land one Icelandic family has kept sacred for generations. Ceremonial music builds chapter by chapter as the moon closes.</p>
-      <p class="lead">At totality, two minutes of shared silence. Your intention goes into the water.</p>
-      <div class="live-options">
-        <a class="live-opt" href="#offer"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 13l-3.5 7M12 13l3.5 7"/></svg><b>In person</b><span>Your ring waits at the gate.</span></a>
-        <a class="live-opt" href="#rsvp"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="1.4" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9 9 0 0 1 13 0"/></svg><b>Tune in remotely</b><span>Your seat in the sixteenth ring.</span></a>
-      </div>
+      <p class="lead">Fifteen rings of people sit around one water altar, on land an Icelandic family has kept sacred for generations. Ceremonial music builds chapter by chapter as the moon closes.</p>
+      <p class="lead">At totality the music stops. For two minutes nobody speaks, and every person in the circle holds the same intention at the same second. Everyone watching holds it too.</p>
+      <p class="lead">That is the shared intention: not a slogan, one sentence you choose for your own life, carried by fifteen hundred people at once.</p>
+      <p class="lead accent">For two days, we practice presence together.</p>
     </div>
   </div>
 </section>
@@ -1222,6 +1233,45 @@ if(iceC&&typeof ICE_DOTS!=='undefined'){
     else if(!vis){iceRun=false}
   },{rootMargin:'80px'}).observe(iceC);
 }
+
+/* Same gold dot field as the countdown banner, so the two read as one block */
+(function(){
+  const c=document.getElementById('banddots');
+  if(!c)return;
+  const x=c.getContext('2d'), host=c.parentElement;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,pts=[],run=false,t0=null;
+  function build(){
+    const r=c.getBoundingClientRect(); if(!r.width||!r.height)return;
+    const dpr=Math.min(2,devicePixelRatio||1);
+    W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    const step=Math.max(15,Math.min(24,W/60));
+    pts=[];
+    for(let gy=step*.5;gy<H;gy+=step)for(let gx=step*.5;gx<W;gx+=step)
+      pts.push({x:gx,y:gy,d:Math.hypot(gx-W*0.5,(gy-H*0.5)*1.35)});
+  }
+  function draw(t){
+    if(!W)return;
+    if(t0===null)t0=t||0;
+    const fade=Math.min(1,((t||0)-t0)/1400);
+    const md=Math.hypot(W,H*0.7), prog=((t||0)/7000)%1, front=prog*md*1.15, band=md*0.19;
+    x.clearRect(0,0,W,H);
+    for(const p of pts){
+      const gap=Math.abs(p.d-front), hit=Math.exp(-(gap*gap)/(2*band*band));
+      x.fillStyle='rgba(251,205,102,'+((0.055+hit*0.30)*0.2*fade).toFixed(3)+')';
+      x.beginPath();x.arc(p.x,p.y,1+hit*0.9,0,6.2832);x.fill();
+    }
+  }
+  function loop(t){ if(!run)return; draw(t); requestAnimationFrame(loop); }
+  build();
+  addEventListener('resize',build,{passive:true});
+  if(!reduced&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){
+      const v=e[0].isIntersecting;
+      if(v&&!run){run=true;requestAnimationFrame(loop)} else if(!v){run=false}
+    },{rootMargin:'60px'}).observe(host);
+  }
+})();
 
 /* World-clock banner: what o'clock totality is, wherever you are */
 (function(){
